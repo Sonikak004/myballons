@@ -10,24 +10,24 @@ export default function WhyChooseUs() {
       caption: "Stuthi's 1st Birthday",
       rotate: "-rotate-6",
       zIndex: "z-10",
-      position: "left-[10%] top-[10%] md:left-[5%] md:top-[5%]",
-      width: "w-[240px] md:w-[280px]"
+      position: "top-[5%] left-[2%] md:top-[5%] md:left-[5%]",
+      width: "w-[200px] sm:w-[230px] md:w-[280px]"
     },
     {
       src: "/gallery/photo-14.jpg",
       caption: "Ushith Reddy, Turns 1",
       rotate: "rotate-3",
       zIndex: "z-20",
-      position: "right-[10%] top-[30%] md:right-[5%] md:top-[25%]",
-      width: "w-[260px] md:w-[300px]"
+      position: "top-[25%] right-[2%] md:top-[25%] md:right-[5%]",
+      width: "w-[220px] sm:w-[250px] md:w-[300px]"
     },
     {
       src: "/gallery/photo-15.jpg",
       caption: "Flawless Execution",
       rotate: "-rotate-2",
       zIndex: "z-30",
-      position: "left-[20%] bottom-[10%] md:left-[15%] md:bottom-[5%]",
-      width: "w-[250px] md:w-[290px]"
+      position: "bottom-[5%] left-[10%] md:bottom-[5%] md:left-[15%]",
+      width: "w-[210px] sm:w-[240px] md:w-[290px]"
     }
   ];
 
@@ -53,7 +53,7 @@ export default function WhyChooseUs() {
   ];
 
   return (
-    <section id="why-choose-us" className="py-24 bg-background w-full overflow-hidden">
+    <section id="why-choose-us" className="py-24 bg-white w-full overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
         
         {/* Header */}
@@ -82,7 +82,7 @@ export default function WhyChooseUs() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-12 items-center max-w-7xl mx-auto">
           
           {/* Left: Polaroid Stack (Scrapbook Idea) */}
-          <div className="relative w-full h-[550px] md:h-[700px] flex items-center justify-center">
+          <div className="relative w-full h-[450px] sm:h-[500px] md:h-[700px] flex items-center justify-center">
             {/* Background decorative elements */}
             <div className="absolute top-[10%] left-[20%] w-3 h-3 rounded-full bg-accent opacity-70" />
             <div className="absolute top-[40%] right-[10%] w-2 h-2 rounded-full bg-secondary opacity-70" />
@@ -98,9 +98,9 @@ export default function WhyChooseUs() {
                 className={`absolute ${polaroid.position} ${polaroid.width} ${polaroid.zIndex} hover:z-40 transition-all duration-300 hover:scale-105 group cursor-pointer`}
               >
                 {/* Polaroid Frame */}
-                <div className="bg-white p-3 pb-12 shadow-[0_15px_35px_-10px_rgba(0,0,0,0.15)] rounded-sm group-hover:shadow-[0_20px_40px_-10px_rgba(0,0,0,0.25)] transition-shadow">
+                <div className="bg-white p-2 sm:p-3 pb-10 sm:pb-12 shadow-[0_15px_35px_-10px_rgba(0,0,0,0.15)] rounded-sm group-hover:shadow-[0_20px_40px_-10px_rgba(0,0,0,0.25)] transition-shadow">
                   {/* Tape */}
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 -rotate-3 w-20 h-7 bg-white/50 border border-white/60 shadow-sm z-20 backdrop-blur-sm" />
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 -rotate-3 w-16 sm:w-20 h-6 sm:h-7 bg-white/50 border border-white/60 shadow-sm z-20 backdrop-blur-sm" />
                   
                   {/* Image Container with Watermark Crop */}
                   <div className="relative w-full aspect-[4/5] bg-gray-100 rounded-sm overflow-hidden pointer-events-none">
@@ -116,8 +116,8 @@ export default function WhyChooseUs() {
                   </div>
                   
                   {/* Caption */}
-                  <div className="absolute bottom-3 left-4 right-4 text-center">
-                    <span className="font-serif italic text-foreground text-lg md:text-xl font-medium tracking-wide">
+                  <div className="absolute bottom-2 sm:bottom-3 left-2 right-2 sm:left-4 sm:right-4 text-center">
+                    <span className="font-serif italic text-foreground text-sm sm:text-lg md:text-xl font-medium tracking-wide">
                       {polaroid.caption}
                     </span>
                   </div>
