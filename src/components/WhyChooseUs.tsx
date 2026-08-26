@@ -83,10 +83,6 @@ export default function WhyChooseUs() {
           
           {/* Left: Polaroid Stack (Scrapbook Idea) */}
           <div className="relative w-full h-[450px] sm:h-[500px] md:h-[550px] flex items-center justify-center">
-            {/* Background decorative elements */}
-            <div className="absolute top-[10%] left-[20%] w-3 h-3 rounded-full bg-accent opacity-70" />
-            <div className="absolute top-[40%] right-[10%] w-2 h-2 rounded-full bg-secondary opacity-70" />
-            <div className="absolute bottom-[20%] left-[15%] w-2.5 h-2.5 rounded-full bg-primary opacity-70" />
 
             {polaroids.map((polaroid, idx) => (
               <motion.div
