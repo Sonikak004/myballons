@@ -1,6 +1,6 @@
 "use client";
 
-import React from 'react'
+import React, { useEffect } from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
 import AutoScroll from 'embla-carousel-auto-scroll'
 import { motion } from 'framer-motion'
@@ -20,10 +20,19 @@ const slides = [
 ]
 
 export default function CarouselSection() {
-  const [emblaRef] = useEmblaCarousel(
+  const [emblaRef, emblaApi] = useEmblaCarousel(
     { loop: true, align: 'start', dragFree: true },
     [AutoScroll({ playOnInit: true, stopOnInteraction: false, speed: 1.5 })]
   )
+
+  useEffect(() => {
+    if (emblaApi) {
+      emblaApi.on('pointerUp', () => {
+        const autoScroll = emblaApi.plugins().autoScroll;
+        if (autoScroll && !autoScroll.isPlaying()) autoScroll.play();
+      });
+    }
+  }, [emblaApi]);
 
   return (
     <section className="py-24 bg-background w-full overflow-hidden">

@@ -1,6 +1,6 @@
 "use client";
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion } from "framer-motion";
 import useEmblaCarousel from 'embla-carousel-react';
 import AutoScroll from 'embla-carousel-auto-scroll';
@@ -50,15 +50,31 @@ const ServiceCard = ({ service }: { service: any }) => {
 };
 
 export default function Services() {
-  const [emblaRefTop] = useEmblaCarousel(
+  const [emblaRefTop, emblaApiTop] = useEmblaCarousel(
     { loop: true, align: 'start', dragFree: true },
     [AutoScroll({ playOnInit: true, stopOnInteraction: false, speed: 1 })]
   );
 
-  const [emblaRefBottom] = useEmblaCarousel(
+  const [emblaRefBottom, emblaApiBottom] = useEmblaCarousel(
     { loop: true, align: 'start', dragFree: true },
     [AutoScroll({ playOnInit: true, stopOnInteraction: false, speed: 1, direction: 'backward' })]
   );
+
+  // Force auto-scroll to resume on mobile touch ends
+  useEffect(() => {
+    if (emblaApiTop) {
+      emblaApiTop.on('pointerUp', () => {
+        const autoScroll = emblaApiTop.plugins().autoScroll;
+        if (autoScroll && !autoScroll.isPlaying()) autoScroll.play();
+      });
+    }
+    if (emblaApiBottom) {
+      emblaApiBottom.on('pointerUp', () => {
+        const autoScroll = emblaApiBottom.plugins().autoScroll;
+        if (autoScroll && !autoScroll.isPlaying()) autoScroll.play();
+      });
+    }
+  }, [emblaApiTop, emblaApiBottom]);
 
   return (
     <section id="services" className="py-24 bg-background w-full overflow-hidden">
