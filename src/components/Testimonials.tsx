@@ -88,7 +88,7 @@ export default function Testimonials() {
 
           {/* Right: Scrolling Review Cards */}
           <div className="lg:w-2/3 w-full">
-            <div ref={scrollRef} className="flex flex-row lg:flex-col overflow-x-auto lg:overflow-visible gap-6 lg:gap-12 pb-4 lg:pb-0 snap-x snap-mandatory [scrollbar-width:none] [&::-webkit-scrollbar]:hidden w-[calc(100vw-2rem)] md:w-full -mx-4 px-4 md:mx-0 md:px-0">
+            <div ref={scrollRef} className="flex flex-row lg:flex-col overflow-x-auto lg:overflow-visible gap-6 lg:gap-12 pb-4 lg:pb-0 snap-x snap-mandatory [scrollbar-width:none] [&::-webkit-scrollbar]:hidden w-screen -mx-4 px-[7.5vw] md:w-full md:mx-0 md:px-0">
               {testimonials.map((review, idx) => (
                 <motion.div
                   key={review.id}
