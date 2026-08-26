@@ -66,12 +66,9 @@ export default function StackedEvents() {
         {events.map((event, index) => (
           <div 
             key={event.id}
-            className={`sticky top-0 h-screen w-full flex items-center justify-center ${event.bgColor} shadow-[0_-10px_40px_rgba(0,0,0,0.1)]`}
+            className={`relative md:sticky md:top-0 h-auto md:h-screen w-full flex items-center justify-center ${event.bgColor} md:shadow-[0_-10px_40px_rgba(0,0,0,0.1)]`}
             style={{
               zIndex: index + 10,
-              // We add a top margin to each subsequent card so they don't cover the title completely,
-              // but actually the user said "1 card with img covering whole page and on top of that only when i scroll down the 2nd img ciompes on top of 1".
-              // So top-0 is perfect for covering the whole page.
             }}
           >
             <div className="w-full h-full flex flex-col md:flex-row">
@@ -84,7 +81,7 @@ export default function StackedEvents() {
               </div>
               
               {/* Right Text */}
-              <div className="w-full md:w-1/2 h-[50vh] md:h-full flex flex-col justify-center px-6 sm:px-8 md:px-16 lg:px-24">
+              <div className="w-full md:w-1/2 flex flex-col justify-center py-16 px-6 sm:px-8 md:px-16 lg:px-24">
                 <span className="inline-block py-1 px-3 md:px-4 rounded-full border border-primary/20 text-primary text-xs md:text-sm font-medium mb-3 md:mb-6 uppercase tracking-wider w-fit">
                   {event.category}
                 </span>
