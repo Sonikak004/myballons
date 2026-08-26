@@ -25,9 +25,9 @@ export default function Hero() {
             video.currentTime = 3;
             video.play();
           }}
-          // To globally crop the watermark logo/number at the top, we make the video 20% taller
-          // and shift it up by 20%, cutting the top off entirely across all devices.
-          className="absolute w-full h-[120%] -top-[20%] left-0 object-cover"
+          // To globally crop the watermark logo/number at the top, we wrap it in a taller container and push it up.
+          // CRITICAL: We MUST use object-top so the top of the video aligns with the container's hidden top area!
+          className="absolute w-full h-[125%] -top-[25%] left-0 object-cover object-top"
         >
           <source src="/videos/video-1.mp4" type="video/mp4" />
         </video>
@@ -37,7 +37,7 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 text-center px-4 max-w-4xl mx-auto flex flex-col items-center mt-20">
+      <div className="relative z-10 text-center px-4 max-w-4xl mx-auto flex flex-col items-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
