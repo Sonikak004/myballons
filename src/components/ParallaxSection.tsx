@@ -24,10 +24,10 @@ export default function ParallaxSection() {
         style={{ y }}
       >
         <div 
-          className="w-full h-full bg-cover bg-center"
-          style={{ backgroundImage: "url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=2070&auto=format&fit=crop')" }}
+          className="absolute w-full h-[115%] -top-[15%] left-0 bg-cover bg-center"
+          style={{ backgroundImage: "url('/gallery/photo-5.jpg')" }}
         />
-        <div className="absolute inset-0 bg-primary/60 mix-blend-multiply" />
+        <div className="absolute inset-0 bg-primary/80 mix-blend-multiply" />
       </motion.div>
 
       {/* Content overlay */}
@@ -39,10 +39,10 @@ export default function ParallaxSection() {
           viewport={{ once: true, margin: "-100px" }}
         >
           <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-6 leading-tight">
-            We Bring Your Vision to Life
+            Let's Create Something Beautiful
           </h2>
           <p className="text-lg md:text-xl text-white/90 font-light leading-relaxed">
-            Our team of expert planners ensures seamless execution and exceptional memories for you and your guests. Every detail handled with precision.
+            Every celebration is a blank canvas. Whether you envision an intimate romantic setting or a vibrant, high-energy party, we design experiences that are uniquely yours.
           </p>
         </motion.div>
       </div>
