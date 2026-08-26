@@ -69,19 +69,15 @@ body {
   font-size: 10px;
 }
 
-@keyframes floatUp {
-  from {
-    transform: translateY(100vh);
-    opacity: 1;
+@keyframes floatBob {
+  0%, 100% {
+    transform: translateY(0px) rotate(-2deg);
   }
-  to {
-    transform: translateY(-200vh);
-    opacity: 0;
+  50% {
+    transform: translateY(-40px) rotate(2deg);
   }
 }
 
 .balloon-anim {
-  animation-name: floatUp;
-  animation-timing-function: ease-in;
-  animation-fill-mode: forwards;
+  animation: floatBob 8s ease-in-out infinite;
 }

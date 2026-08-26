@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 
-// The brand palette for the balloons: Navy, Gold, Red, Cream/White
 // Vibrant, classic party balloon colors!
 const VIBRANT_COLORS = [
   { r: 255, g: 59, b: 48 },   // Bright Red
@@ -15,70 +14,49 @@ const VIBRANT_COLORS = [
   { r: 255, g: 45, b: 85 }    // Pink
 ];
 
-interface Balloon {
-  id: string;
-  color: { r: number; g: number; b: number };
-  left: number;
-  duration: number;
-  delay: number;
-}
+// Fixed positions on the extreme left and right so they never block central text
+const BALLOON_POSITIONS = [
+  { top: "15vh", left: "3vw" },
+  { top: "65vh", left: "6vw" },
+  { top: "35vh", left: "10vw" },
+  { top: "25vh", right: "5vw" },
+  { top: "75vh", right: "8vw" },
+  { top: "45vh", right: "2vw" }
+];
 
 export default function FloatingBalloons() {
-  const [balloons, setBalloons] = useState<Balloon[]>([]);
-
-  const launchBalloons = (count: number = 25) => {
-    const newBalloons: Balloon[] = [];
-    
-    for (let i = 0; i < count; i++) {
-      const color = VIBRANT_COLORS[Math.floor(Math.random() * VIBRANT_COLORS.length)];
-      newBalloons.push({
-        id: Math.random().toString(36).substr(2, 9),
-        color,
-        left: Math.floor(Math.random() * 90), // 0 to 90vw
-        duration: Math.floor(Math.random() * 5) + 5, // 5s to 10s
-        delay: Math.random() * 2, // 0 to 2s delay
-      });
-    }
-
-    setBalloons((prev) => [...prev, ...newBalloons]);
-
-    setTimeout(() => {
-      setBalloons((prev) => prev.filter(b => !newBalloons.find(nb => nb.id === b.id)));
-    }, 13000);
-  };
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    const timeout = setTimeout(() => {
-      launchBalloons(30);
-    }, 1000);
-
-    const handleLaunch = () => launchBalloons(20);
-    window.addEventListener("trigger-balloons", handleLaunch);
-
-    return () => {
-      clearTimeout(timeout);
-      window.removeEventListener("trigger-balloons", handleLaunch);
-    };
+    setMounted(true);
   }, []);
 
-  if (balloons.length === 0) return null;
+  if (!mounted) return null;
 
   return (
-    <div className="fixed inset-0 pointer-events-none z-[9999] overflow-hidden">
-      {balloons.map((b) => (
-        <div
-          key={b.id}
-          className="balloon balloon-anim"
-          style={{
-            left: `${b.left}vw`,
-            animationDuration: `${b.duration}s`,
-            animationDelay: `${b.delay}s`,
-            backgroundColor: `rgba(${b.color.r}, ${b.color.g}, ${b.color.b}, 0.7)`,
-            color: `rgba(${b.color.r}, ${b.color.g}, ${b.color.b}, 0.7)`,
-            boxShadow: `inset -7px -3px 10px rgba(${Math.max(0, b.color.r - 20)}, ${Math.max(0, b.color.g - 20)}, ${Math.max(0, b.color.b - 20)}, 0.7)`
-          }}
-        />
-      ))}
+    <div className="fixed inset-0 pointer-events-none z-[99] overflow-hidden">
+      {BALLOON_POSITIONS.map((pos, idx) => {
+        const color = VIBRANT_COLORS[idx % VIBRANT_COLORS.length];
+        return (
+          <div
+            key={idx}
+            className="balloon balloon-anim"
+            style={{
+              top: pos.top,
+              left: pos.left,
+              right: pos.right,
+              bottom: "auto", // Override the CSS bottom
+              animationDuration: `${7 + (idx % 4)}s`,
+              animationDelay: `-${idx}s`,
+              opacity: 0.25, // Very soft opacity so they are purely decorative
+              transform: `scale(${0.6 + (idx * 0.1)})`, // Slightly different sizes
+              backgroundColor: `rgba(${color.r}, ${color.g}, ${color.b}, 1)`,
+              color: `rgba(${color.r}, ${color.g}, ${color.b}, 1)`,
+              boxShadow: `inset -7px -3px 10px rgba(${Math.max(0, color.r - 30)}, ${Math.max(0, color.g - 30)}, ${Math.max(0, color.b - 30)}, 1)`
+            }}
+          />
+        );
+      })}
     </div>
   );
 }
