@@ -1,5 +1,5 @@
 import Hero from "@/components/Hero";
-import ParallaxSection from "@/components/ParallaxSection";
+import MarqueeSection from "@/components/MarqueeSection";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import PhotoGallery from "@/components/PhotoGallery";
 import Services from "@/components/Services";
@@ -15,7 +15,7 @@ export default function Home() {
       <Hero />
       <WhyChooseUs />
       <Services />
-      <ParallaxSection />
+      <MarqueeSection />
       <PhotoGallery />
       <StackedEvents />
       <CarouselSection />
