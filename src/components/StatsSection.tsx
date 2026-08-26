@@ -1,36 +1,92 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { Star, CheckCircle, Users, Briefcase } from "lucide-react";
+import { motion, useInView } from "framer-motion";
+import { Star, Briefcase, Users, Quote } from "lucide-react";
+import { useEffect, useState, useRef } from "react";
+
+// A neat counter component that animates from 0 to the target number
+function Counter({ end, duration = 2, decimals = 0, suffix = "" }: { end: number, duration?: number, decimals?: number, suffix?: string }) {
+  const [count, setCount] = useState(0);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
+
+  useEffect(() => {
+    if (isInView) {
+      let startTimestamp: number | null = null;
+      const step = (timestamp: number) => {
+        if (!startTimestamp) startTimestamp = timestamp;
+        // easeOutQuart easing for a smooth slowdown
+        const progress = Math.min((timestamp - startTimestamp) / (duration * 1000), 1);
+        const easeProgress = 1 - Math.pow(1 - progress, 4);
+        setCount(easeProgress * end);
+        
+        if (progress < 1) {
+          window.requestAnimationFrame(step);
+        }
+      };
+      window.requestAnimationFrame(step);
+    }
+  }, [isInView, end, duration]);
+
+  return (
+    <span ref={ref}>
+      {count.toFixed(decimals)}{suffix}
+    </span>
+  );
+}
 
 const stats = [
   {
     id: 1,
-    value: "18+",
+    end: 18,
+    decimals: 0,
+    suffix: "+",
     label: "Services Offered",
     icon: Briefcase,
     delay: 0.1,
   },
   {
     id: 2,
-    value: "4.9",
+    end: 4.9,
+    decimals: 1,
+    suffix: "",
     label: "36 Customer Reviews",
-    icon: Star, // We'll make this look like Google Reviews
+    icon: Star,
     isRating: true,
     delay: 0.2,
   },
   {
     id: 3,
-    value: "1200+",
+    end: 1200,
+    decimals: 0,
+    suffix: "+",
     label: "Happy Customers",
     icon: Users,
     delay: 0.3,
   }
 ];
 
+const testimonials = [
+  {
+    id: 1,
+    name: "Anjali M.",
+    text: "My Balloons My Props made my daughter's 1st birthday an absolute dream! The decorations were flawlessly executed and the team was so professional. Highly recommend for any event in Bangalore!",
+  },
+  {
+    id: 2,
+    name: "Rohan K.",
+    text: "Unmatched creativity and stress-free planning. They handled our corporate gala with such precision, transforming the venue completely. Truly the best event management company.",
+  },
+  {
+    id: 3,
+    name: "Sneha P.",
+    text: "We hired them for our engagement party and the floral setups were breathtaking. They listened to our ideas and brought them to life beyond our expectations. 10/10!",
+  }
+];
+
 export default function StatsSection() {
   return (
-    <section className="py-20 bg-primary text-white w-full overflow-hidden border-y border-white/10">
+    <section className="py-24 bg-primary text-white w-full overflow-hidden border-y border-white/10">
       <div className="container mx-auto px-4 md:px-6">
         
         {/* Header */}
@@ -49,14 +105,14 @@ export default function StatsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-serif font-bold text-white mb-4"
+            className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white mb-4"
           >
             Proven Success in Numbers
           </motion.h2>
         </div>
 
         {/* Stats Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 max-w-5xl mx-auto mb-24">
           {stats.map((stat) => {
             const Icon = stat.icon;
             return (
@@ -80,8 +136,8 @@ export default function StatsSection() {
                   </div>
                 )}
                 
-                <h3 className="text-5xl md:text-6xl font-serif font-bold text-white mb-2">
-                  {stat.value}
+                <h3 className="text-5xl md:text-6xl font-serif font-bold text-white mb-2 tabular-nums">
+                  <Counter end={stat.end} decimals={stat.decimals} suffix={stat.suffix} />
                 </h3>
                 <p className="text-white/70 text-lg font-light tracking-wide text-center">
                   {stat.label}
@@ -102,6 +158,39 @@ export default function StatsSection() {
               </motion.div>
             );
           })}
+        </div>
+
+        {/* Testimonials */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          {testimonials.map((review, idx) => (
+            <motion.div
+              key={review.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 + (idx * 0.1) }}
+              viewport={{ once: true }}
+              className="bg-white/5 border border-white/10 p-8 rounded-2xl relative"
+            >
+              <Quote className="absolute top-6 right-6 text-white/10" size={48} />
+              <div className="flex gap-1 mb-4 text-accent">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} fill="currentColor" size={16} />
+                ))}
+              </div>
+              <p className="text-white/80 font-light leading-relaxed mb-6 italic text-sm md:text-base">
+                "{review.text}"
+              </p>
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-secondary/20 flex items-center justify-center font-bold text-secondary font-serif">
+                  {review.name.charAt(0)}
+                </div>
+                <div>
+                  <h4 className="font-medium text-white">{review.name}</h4>
+                  <span className="text-white/50 text-xs">Verified Customer</span>
+                </div>
+              </div>
+            </motion.div>
+          ))}
         </div>
 
       </div>
