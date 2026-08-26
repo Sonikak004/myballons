@@ -39,7 +39,7 @@ export default function PhotoGallery() {
         </div>
 
         {/* CSS Masonry Layout (Pinterest Style) */}
-        <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 md:gap-6 space-y-4 md:space-y-6">
+        <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 md:gap-6">
           {images.map((src, idx) => {
             // Assign varying heights to create the authentic masonry look
             let aspectClass = "aspect-square";
@@ -53,7 +53,7 @@ export default function PhotoGallery() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
                 viewport={{ once: true }}
-                className={`relative w-full ${aspectClass} inline-block rounded-3xl overflow-hidden shadow-lg group cursor-pointer break-inside-avoid`}
+                className={`relative w-full ${aspectClass} block mb-4 md:mb-6 rounded-3xl overflow-hidden shadow-lg group cursor-pointer break-inside-avoid`}
               >
                 {/* 25% aggressive crop to hide watermarks */}
                 <div className="absolute w-full h-[125%] -top-[25%] left-0 transition-transform duration-700 group-hover:scale-105 origin-center">
