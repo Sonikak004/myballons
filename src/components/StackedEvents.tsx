@@ -95,7 +95,15 @@ export default function StackedEvents() {
                   {event.desc}
                 </p>
                 <div className="mt-6 md:mt-10">
-                  <a href="#contact" className="pb-1 md:pb-2 border-b-2 border-primary text-primary text-sm md:text-base font-medium hover:text-secondary hover:border-secondary transition-colors inline-block">
+                  <a 
+                    href="#contact" 
+                    className="pb-1 md:pb-2 border-b-2 border-primary text-primary text-sm md:text-base font-medium hover:text-secondary hover:border-secondary transition-colors inline-block"
+                    onClick={() => {
+                      if (typeof window !== 'undefined') {
+                        window.dispatchEvent(new Event("trigger-balloons"));
+                      }
+                    }}
+                  >
                     Plan Similar Event
                   </a>
                 </div>

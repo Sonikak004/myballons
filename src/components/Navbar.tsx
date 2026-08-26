@@ -34,7 +34,16 @@ export default function Navbar() {
       }`}
     >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2">
+        <Link 
+          href="/" 
+          className="flex items-center gap-2"
+          onClick={(e) => {
+            // Dispatch custom event for the balloon easter egg
+            if (typeof window !== 'undefined') {
+              window.dispatchEvent(new Event("trigger-balloons"));
+            }
+          }}
+        >
           <div className="relative h-12 w-32 md:h-16 md:w-40 p-1">
             <Image
               src="/logo.png"
