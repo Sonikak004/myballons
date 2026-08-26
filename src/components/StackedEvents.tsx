@@ -40,9 +40,9 @@ const events = [
 
 export default function StackedEvents() {
   return (
-    <section className="bg-background relative w-full pb-24">
+    <section className="bg-background relative w-full pb-12 md:pb-24">
       
-      <div className="py-24 text-center px-4">
+      <div className="py-12 md:py-24 text-center px-4">
         <motion.h2 
           initial={{ y: 20, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}

@@ -36,10 +36,10 @@ export default function CarouselSection() {
   }, [emblaApi]);
 
   return (
-    <section className="py-24 bg-background w-full overflow-hidden">
+    <section className="py-12 md:py-24 bg-background w-full overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
         
-        <div className="text-center mb-12 flex flex-col items-center">
+        <div className="text-center mb-6 md:mb-12 flex flex-col items-center">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -47,10 +47,10 @@ export default function CarouselSection() {
             viewport={{ once: true }}
             className="max-w-2xl mx-auto"
           >
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-primary mb-4">
+            <h2 className="text-4xl md:text-5xl font-serif font-bold text-primary mb-3 md:mb-4">
               Moments We Cherish
             </h2>
-            <p className="text-foreground/70 font-light text-lg">
+            <p className="text-foreground/70 font-light text-base md:text-lg">
               A curated collection of extraordinary setups.
             </p>
           </motion.div>
@@ -59,7 +59,7 @@ export default function CarouselSection() {
       </div>
 
       {/* Full-bleed Carousel */}
-      <div className="w-full mt-12 cursor-grab active:cursor-grabbing">
+      <div className="w-full mt-2 md:mt-4 cursor-grab active:cursor-grabbing">
         <div className="embla overflow-hidden" ref={emblaRef}>
           <div className="embla__container flex -ml-6">
             {slides.map((src, index) => (
