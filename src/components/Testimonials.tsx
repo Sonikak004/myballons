@@ -54,11 +54,12 @@ export default function Testimonials() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
+              className="text-center lg:text-left flex flex-col items-center lg:items-start"
             >
               <h2 className="text-5xl md:text-6xl font-serif font-bold leading-tight mb-6">
                 Loved by <br/><span className="text-secondary italic">Our Clients</span>
               </h2>
-              <p className="text-white/70 font-light text-lg mb-8 leading-relaxed max-w-sm">
+              <p className="text-white/70 font-light text-lg mb-8 leading-relaxed max-w-sm mx-auto lg:mx-0">
                 We take pride in turning your visions into reality. Here is what our clients have to say about our meticulous planning and flawless execution.
               </p>
               
