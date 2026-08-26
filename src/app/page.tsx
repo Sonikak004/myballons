@@ -1,8 +1,9 @@
 import Hero from "@/components/Hero";
+import StatsCounter from "@/components/StatsCounter";
 import WhyChooseUs from "@/components/WhyChooseUs";
-import StatsSection from "@/components/StatsSection";
 import PhotoGallery from "@/components/PhotoGallery";
 import Services from "@/components/Services";
+import Testimonials from "@/components/Testimonials";
 import StackedEvents from "@/components/StackedEvents";
 import CarouselSection from "@/components/CarouselSection";
 import FAQ from "@/components/FAQ";
@@ -13,10 +14,11 @@ export default function Home() {
   return (
     <main className="w-full">
       <Hero />
+      <StatsCounter />
       <WhyChooseUs />
       <Services />
-      <StatsSection />
       <PhotoGallery />
+      <Testimonials />
       <StackedEvents />
       <CarouselSection />
       <FAQ />
