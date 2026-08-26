@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Star, Quote } from "lucide-react";
+import { Star, Quote, ChevronLeft, ChevronRight } from "lucide-react";
+import { useRef } from "react";
 
 const testimonials = [
   {
@@ -32,6 +33,15 @@ const testimonials = [
 ];
 
 export default function Testimonials() {
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const scroll = (direction: 'left' | 'right') => {
+    if (scrollRef.current) {
+      const scrollAmount = window.innerWidth * 0.85; // rough width of one card
+      scrollRef.current.scrollBy({ left: direction === 'left' ? -scrollAmount : scrollAmount, behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="bg-primary text-white w-full py-24 md:py-32 relative">
       <div className="container mx-auto px-4 md:px-6 max-w-7xl">
@@ -77,7 +87,7 @@ export default function Testimonials() {
 
           {/* Right: Scrolling Review Cards */}
           <div className="lg:w-2/3 w-full">
-            <div className="flex flex-row lg:flex-col overflow-x-auto lg:overflow-visible gap-6 lg:gap-12 pb-8 lg:pb-0 snap-x snap-mandatory [scrollbar-width:none] [&::-webkit-scrollbar]:hidden w-[calc(100vw-2rem)] md:w-full -mx-4 px-4 md:mx-0 md:px-0">
+            <div ref={scrollRef} className="flex flex-row lg:flex-col overflow-x-auto lg:overflow-visible gap-6 lg:gap-12 pb-4 lg:pb-0 snap-x snap-mandatory [scrollbar-width:none] [&::-webkit-scrollbar]:hidden w-[calc(100vw-2rem)] md:w-full -mx-4 px-4 md:mx-0 md:px-0">
               {testimonials.map((review, idx) => (
                 <motion.div
                   key={review.id}
@@ -108,6 +118,26 @@ export default function Testimonials() {
                 </motion.div>
               ))}
             </div>
+            
+            {/* Mobile Scroll Indicators */}
+            <div className="flex lg:hidden justify-center items-center gap-4 mt-6">
+              <button 
+                onClick={() => scroll('left')}
+                className="p-3 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 transition-colors"
+                aria-label="Previous review"
+              >
+                <ChevronLeft size={24} className="text-white/70" />
+              </button>
+              <span className="text-white/30 text-sm font-light tracking-widest uppercase">Swipe</span>
+              <button 
+                onClick={() => scroll('right')}
+                className="p-3 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 transition-colors"
+                aria-label="Next review"
+              >
+                <ChevronRight size={24} className="text-white/70" />
+              </button>
+            </div>
+
           </div>
 
         </div>
