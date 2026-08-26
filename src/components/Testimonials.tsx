@@ -113,13 +113,13 @@ export default function Testimonials() {
                   </p>
                   
                   {/* Reviewer Info */}
-                  <div className="flex flex-col lg:flex-row items-center lg:items-center gap-3 lg:gap-4 relative z-10">
+                  <div className="flex flex-row items-center justify-center lg:justify-start gap-4 relative z-10 w-full mt-auto">
                     <div className="w-12 h-12 rounded-full bg-secondary text-white flex items-center justify-center font-bold font-serif text-lg shrink-0">
                       {review.name.charAt(0)}
                     </div>
-                    <div className="flex flex-col items-center lg:items-start">
-                      <h4 className="font-bold text-base md:text-lg text-white tracking-wide">{review.name}</h4>
-                      <span className="text-white/50 text-xs md:text-sm tracking-wider uppercase font-medium">Verified Client</span>
+                    <div className="flex flex-col items-start text-left">
+                      <h4 className="font-bold text-base md:text-lg text-white tracking-wide leading-tight">{review.name}</h4>
+                      <span className="text-white/50 text-xs md:text-sm tracking-wider uppercase font-medium mt-1">Verified Client</span>
                     </div>
                   </div>
                 </motion.div>
