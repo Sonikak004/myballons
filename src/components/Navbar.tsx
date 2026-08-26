@@ -77,6 +77,7 @@ export default function Navbar() {
         <button
           className="md:hidden p-2 text-white mix-blend-difference"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-label="Toggle mobile menu"
         >
           {mobileMenuOpen ? <X size={28} className={isScrolled ? "text-foreground" : "text-white"} /> : <Menu size={28} className={isScrolled ? "text-foreground" : "text-white"} />}
         </button>

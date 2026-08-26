@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const events = [
   {
@@ -74,9 +75,12 @@ export default function StackedEvents() {
             <div className="w-full h-full flex flex-col md:flex-row">
               {/* Left Image */}
               <div className="w-full md:w-1/2 h-[50vh] md:h-full relative overflow-hidden">
-                <div 
-                  className="absolute w-full h-[115%] -top-[15%] left-0 bg-cover bg-center"
-                  style={{ backgroundImage: `url('${event.image}')` }}
+                <Image
+                  src={event.image}
+                  alt={event.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="absolute w-full h-[115%] -top-[15%] left-0 object-cover"
                 />
               </div>
               

@@ -4,6 +4,7 @@ import React, { useEffect } from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
 import AutoScroll from 'embla-carousel-auto-scroll'
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 
 const slides = [
   "/gallery/photo-7.jpg",
@@ -69,9 +70,12 @@ export default function CarouselSection() {
                 <div 
                   className="relative aspect-[16/10] md:aspect-[16/9] rounded-2xl overflow-hidden shadow-lg group"
                 >
-                  <div 
-                    className="absolute w-full h-[115%] -top-[15%] left-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105 origin-bottom"
-                    style={{ backgroundImage: `url('${src}')` }} 
+                  <Image 
+                    src={src}
+                    alt="Event Setup Showcase"
+                    fill
+                    sizes="(max-width: 768px) 85vw, (max-width: 1200px) 50vw, 30vw"
+                    className="absolute w-full h-[115%] -top-[15%] left-0 object-cover transition-transform duration-700 group-hover:scale-105 origin-bottom"
                   />
                   <div className="absolute inset-0 bg-primary/10 transition-opacity group-hover:opacity-0 z-10 pointer-events-none" />
                 </div>

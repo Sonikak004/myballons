@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { Sparkles, HeartHandshake, ShieldCheck } from "lucide-react";
 
 export default function WhyChooseUs() {
@@ -78,7 +79,13 @@ export default function WhyChooseUs() {
             viewport={{ once: true }}
             className="md:col-span-1 md:row-span-1 relative rounded-3xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.12)] min-h-[250px] md:min-h-0"
           >
-            <div className="absolute w-full h-[115%] -top-[15%] left-0 bg-cover bg-center" style={{ backgroundImage: "url('/gallery/photo-6.jpg')" }} />
+            <Image 
+              src="/gallery/photo-6.jpg"
+              alt="Beautiful event setup"
+              fill
+              sizes="(max-width: 768px) 100vw, 25vw"
+              className="absolute w-full h-[115%] -top-[15%] left-0 object-cover"
+            />
           </motion.div>
 
           {/* Box 4: Square Text Box (1x1) */}

@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const images = [
   "/gallery/photo-13.jpg",
@@ -47,9 +48,12 @@ export default function PhotoGallery() {
               viewport={{ once: true }}
               className="relative aspect-square md:aspect-[4/3] rounded-xl overflow-hidden group cursor-pointer"
             >
-              <div 
-                className="absolute w-full h-[115%] -top-[15%] left-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110 origin-bottom"
-                style={{ backgroundImage: `url('${src}')` }}
+              <Image
+                src={src}
+                alt="Event Gallery Photo"
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                className="absolute w-full h-[115%] -top-[15%] left-0 object-cover transition-transform duration-700 group-hover:scale-110 origin-bottom"
               />
               <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/20 transition-colors duration-500 z-10 pointer-events-none" />
             </motion.div>
