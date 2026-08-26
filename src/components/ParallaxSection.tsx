@@ -16,7 +16,7 @@ export default function ParallaxSection() {
   return (
     <section
       ref={containerRef}
-      className="relative h-[80vh] w-full flex items-center justify-center overflow-hidden"
+      className="relative h-[50vh] w-full flex items-center justify-center overflow-hidden"
     >
       {/* Parallax Background */}
       <motion.div
@@ -25,7 +25,7 @@ export default function ParallaxSection() {
       >
         <div 
           className="absolute w-full h-[115%] -top-[15%] left-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('/gallery/photo-5.jpg')" }}
+          style={{ backgroundImage: "url('/gallery/photo-3.jpg')" }}
         />
         <div className="absolute inset-0 bg-primary/80 mix-blend-multiply" />
       </motion.div>
