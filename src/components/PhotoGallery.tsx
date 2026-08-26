@@ -9,7 +9,7 @@ const images = [
   "/gallery/photo-15.jpg",
   "/gallery/photo-16.jpg",
   "/gallery/photo-17.jpg",
-  "/gallery/photo-18.jpg",
+  "/gallery/photo-11.jpg",
 ];
 
 // Tailwind classes for the perfect 4x3 flush bento box
