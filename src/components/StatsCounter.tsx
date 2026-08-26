@@ -41,9 +41,9 @@ const stats = [
 
 export default function StatsCounter() {
   return (
-    <section className="py-12 md:py-16 bg-white w-full border-b border-black/5">
+    <section className="py-10 md:py-12 bg-white w-full border-b border-black/5">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-12 md:gap-8 max-w-5xl mx-auto">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-10 md:gap-8 max-w-5xl mx-auto">
           {stats.map((stat, idx) => (
             <motion.div
               key={stat.id}
@@ -53,8 +53,8 @@ export default function StatsCounter() {
               viewport={{ once: true }}
               className="flex flex-col items-center text-center group"
             >
-              {/* Refined Minimalist Number */}
-              <div className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-primary mb-2 md:mb-3 tracking-tighter tabular-nums leading-none">
+              {/* Modest Elegant Number */}
+              <div className="text-4xl md:text-5xl lg:text-5xl font-serif font-bold text-primary mb-2 md:mb-3 tracking-tighter tabular-nums leading-none">
                 <Counter end={stat.end} decimals={stat.decimals} suffix={stat.suffix} />
               </div>
               

@@ -18,6 +18,16 @@ const testimonials = [
     id: 3,
     name: "Sneha P.",
     text: "We hired them for our engagement party and the floral setups were breathtaking. They listened to our ideas and brought them to life beyond our expectations. 10/10!",
+  },
+  {
+    id: 4,
+    name: "Kavita S.",
+    text: "The baby shower decorations were straight out of a fairy tale! The balloon arches and pastel themes were just gorgeous. Thank you for making it so special.",
+  },
+  {
+    id: 5,
+    name: "Arjun D.",
+    text: "Absolutely brilliant service. We needed a massive stage setup for a product launch and they delivered perfection without any hassle. Highly recommended.",
   }
 ];
 
@@ -28,7 +38,7 @@ export default function Testimonials() {
         <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 relative items-start">
           
           {/* Left: Sticky Header */}
-          <div className="lg:w-1/3 lg:sticky lg:top-32 flex flex-col gap-6">
+          <div className="lg:w-1/3 lg:sticky lg:top-0 lg:h-screen flex flex-col justify-center pb-20">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
