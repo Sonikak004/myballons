@@ -38,7 +38,7 @@ export default function Testimonials() {
         <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 relative items-start">
           
           {/* Left: Sticky Header */}
-          <div className="lg:w-1/3 lg:sticky lg:top-0 lg:h-screen flex flex-col justify-center pb-20">
+          <div className="lg:w-1/3 lg:sticky lg:top-1/2 lg:-translate-y-1/2 flex flex-col gap-6">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
