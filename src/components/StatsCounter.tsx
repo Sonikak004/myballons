@@ -41,9 +41,9 @@ const stats = [
 
 export default function StatsCounter() {
   return (
-    <section className="py-16 md:py-24 bg-white w-full border-b border-black/5">
+    <section className="py-12 md:py-16 bg-white w-full border-b border-black/5">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-12 md:gap-8 max-w-6xl mx-auto">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-12 md:gap-8 max-w-5xl mx-auto">
           {stats.map((stat, idx) => (
             <motion.div
               key={stat.id}
@@ -53,14 +53,14 @@ export default function StatsCounter() {
               viewport={{ once: true }}
               className="flex flex-col items-center text-center group"
             >
-              {/* Massive Minimalist Number */}
-              <div className="text-6xl md:text-8xl lg:text-[8rem] font-serif font-bold text-primary mb-2 md:mb-4 tracking-tighter tabular-nums leading-none">
+              {/* Refined Minimalist Number */}
+              <div className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-primary mb-2 md:mb-3 tracking-tighter tabular-nums leading-none">
                 <Counter end={stat.end} decimals={stat.decimals} suffix={stat.suffix} />
               </div>
               
               {/* Optional Rating Stars right below the number */}
               {stat.isRating && (
-                <div className="flex gap-1 mb-3 text-accent group-hover:scale-110 transition-transform duration-500">
+                <div className="flex gap-1 mb-2 text-accent group-hover:scale-110 transition-transform duration-500">
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} fill="currentColor" size={20} className="drop-shadow-sm" />
                   ))}
@@ -68,7 +68,7 @@ export default function StatsCounter() {
               )}
               
               {/* Elegant Label */}
-              <p className="text-foreground/60 text-lg md:text-xl font-light uppercase tracking-[0.2em]">
+              <p className="text-foreground/60 text-base md:text-lg font-light uppercase tracking-[0.15em]">
                 {stat.label}
               </p>
             </motion.div>
