@@ -1,5 +1,4 @@
 import Hero from "@/components/Hero";
-import CreativeCTA from "@/components/CreativeCTA";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import PhotoGallery from "@/components/PhotoGallery";
 import Services from "@/components/Services";
@@ -15,7 +14,6 @@ export default function Home() {
       <Hero />
       <WhyChooseUs />
       <Services />
-      <CreativeCTA />
       <PhotoGallery />
       <StackedEvents />
       <CarouselSection />
