@@ -13,10 +13,10 @@ export default function Home() {
   return (
     <main className="w-full">
       <Hero />
-      <ParallaxSection />
       <WhyChooseUs />
-      <PhotoGallery />
       <Services />
+      <ParallaxSection />
+      <PhotoGallery />
       <StackedEvents />
       <CarouselSection />
       <FAQ />
