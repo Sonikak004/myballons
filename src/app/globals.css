@@ -70,24 +70,18 @@ body {
 }
 
 @keyframes floatUp {
-  0% {
-    transform: translateY(0) rotate(-5deg);
-    opacity: 0;
-  }
-  10% {
+  from {
+    transform: translateY(100vh);
     opacity: 1;
   }
-  80% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(-120vh) rotate(5deg);
+  to {
+    transform: translateY(-200vh);
     opacity: 0;
   }
 }
 
 .balloon-anim {
   animation-name: floatUp;
-  animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in;
   animation-fill-mode: forwards;
 }
