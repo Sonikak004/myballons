@@ -16,18 +16,14 @@ export default function Hero() {
           muted
           playsInline
           onLoadedMetadata={(e) => {
-            // Cut the starting 3 seconds of the video
             (e.target as HTMLVideoElement).currentTime = 3;
           }}
           onEnded={(e) => {
-            // When the video finishes, loop back to 3 seconds instead of 0
             const video = e.target as HTMLVideoElement;
             video.currentTime = 3;
             video.play();
           }}
-          // To globally crop the watermark logo/number at the top, we wrap it in a taller container and push it up.
-          // CRITICAL: We MUST use object-top so the top of the video aligns with the container's hidden top area!
-          className="absolute w-full h-[125%] -top-[25%] left-0 object-cover object-top"
+          className="absolute w-full h-[125%] -top-[25%] md:h-[120%] md:-top-[20%] left-0 object-cover object-top md:object-center"
         >
           <source src="/videos/video-1.mp4" type="video/mp4" />
         </video>
