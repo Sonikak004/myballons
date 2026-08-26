@@ -12,6 +12,16 @@ const images = [
   "/gallery/photo-18.jpg",
 ];
 
+// Tailwind classes for the perfect 4x3 flush bento box
+const bentoClasses = [
+  "md:col-span-2 md:row-span-2 aspect-square md:aspect-auto", // Photo 1: Large Square
+  "md:col-span-2 md:row-span-1 aspect-[2/1] md:aspect-auto",  // Photo 2: Wide Landscape
+  "md:col-span-1 md:row-span-1 aspect-square md:aspect-auto", // Photo 3: Small Square
+  "md:col-span-1 md:row-span-1 aspect-square md:aspect-auto", // Photo 4: Small Square
+  "md:col-span-2 md:row-span-1 aspect-[2/1] md:aspect-auto",  // Photo 5: Wide Landscape
+  "md:col-span-2 md:row-span-1 aspect-[2/1] md:aspect-auto",  // Photo 6: Wide Landscape
+];
+
 export default function PhotoGallery() {
   return (
     <section id="gallery" className="py-24 bg-white w-full">
@@ -38,39 +48,32 @@ export default function PhotoGallery() {
           </motion.p>
         </div>
 
-        {/* CSS Masonry Layout (Pinterest Style) */}
-        <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 md:gap-6">
-          {images.map((src, idx) => {
-            // Assign varying heights to create the authentic masonry look
-            let aspectClass = "aspect-square";
-            if (idx % 3 === 0) aspectClass = "aspect-[3/4]"; // Tall portrait
-            else if (idx % 2 === 0) aspectClass = "aspect-[4/3]"; // Wide landscape
-
-            return (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: idx * 0.1 }}
-                viewport={{ once: true }}
-                className={`relative w-full ${aspectClass} block mb-4 md:mb-6 rounded-3xl overflow-hidden shadow-lg group cursor-pointer break-inside-avoid`}
-              >
-                {/* 25% aggressive crop to hide watermarks */}
-                <div className="absolute w-full h-[125%] -top-[25%] left-0 transition-transform duration-700 group-hover:scale-105 origin-center">
-                  <Image 
-                    src={src} 
-                    alt={`Event Gallery Photo ${idx + 1}`} 
-                    fill 
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" 
-                    className="object-cover" 
-                  />
-                </div>
-                
-                {/* Hover Overlay */}
-                <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/20 transition-colors duration-500 z-10 pointer-events-none" />
-              </motion.div>
-            );
-          })}
+        {/* Flush Bento Box Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-4 md:auto-rows-[300px] gap-4 md:gap-6 w-full">
+          {images.map((src, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: idx * 0.1 }}
+              viewport={{ once: true }}
+              className={`relative w-full h-full ${bentoClasses[idx]} rounded-3xl overflow-hidden shadow-lg group cursor-pointer`}
+            >
+              {/* 25% aggressive crop to hide watermarks */}
+              <div className="absolute w-full h-[125%] -top-[25%] left-0 transition-transform duration-700 group-hover:scale-105 origin-center">
+                <Image 
+                  src={src} 
+                  alt={`Event Gallery Photo ${idx + 1}`} 
+                  fill 
+                  sizes="(max-width: 768px) 100vw, 50vw" 
+                  className="object-cover" 
+                />
+              </div>
+              
+              {/* Hover Overlay */}
+              <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/20 transition-colors duration-500 z-10 pointer-events-none" />
+            </motion.div>
+          ))}
         </div>
 
       </div>
