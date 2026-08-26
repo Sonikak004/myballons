@@ -67,14 +67,14 @@ export default function StackedEvents() {
         {events.map((event, index) => (
           <div 
             key={event.id}
-            className={`relative md:sticky md:top-0 h-auto md:h-screen w-full flex items-center justify-center ${event.bgColor} md:shadow-[0_-10px_40px_rgba(0,0,0,0.1)]`}
+            className={`sticky top-0 h-[100svh] w-full flex items-center justify-center ${event.bgColor} shadow-[0_-10px_40px_rgba(0,0,0,0.1)]`}
             style={{
               zIndex: index + 10,
             }}
           >
             <div className="w-full h-full flex flex-col md:flex-row">
               {/* Left Image */}
-              <div className="w-full md:w-1/2 h-[50vh] md:h-full relative overflow-hidden">
+              <div className="w-full md:w-1/2 h-[50svh] md:h-full relative overflow-hidden shrink-0">
                 <div className="absolute w-full h-[125%] -top-[25%] left-0">
                   <Image
                     src={event.image}
@@ -87,7 +87,7 @@ export default function StackedEvents() {
               </div>
               
               {/* Right Text */}
-              <div className="w-full md:w-1/2 flex flex-col justify-center py-16 px-6 sm:px-8 md:px-16 lg:px-24">
+              <div className="w-full md:w-1/2 flex flex-col justify-center py-8 md:py-16 px-6 sm:px-8 md:px-16 lg:px-24">
                 <span className="inline-block py-1 px-3 md:px-4 rounded-full border border-primary/20 text-primary text-xs md:text-sm font-medium mb-3 md:mb-6 uppercase tracking-wider w-fit">
                   {event.category}
                 </span>
