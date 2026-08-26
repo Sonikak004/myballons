@@ -12,14 +12,14 @@ const images = [
   "/gallery/photo-2.jpg",
 ];
 
-// Tailwind classes for the perfect 4x3 flush bento box
+// Tailwind classes for the perfect flush bento box, completely responsive!
 const bentoClasses = [
-  "md:col-span-2 md:row-span-2 aspect-square md:aspect-auto", // Photo 1: Large Square
-  "md:col-span-2 md:row-span-1 aspect-[2/1] md:aspect-auto",  // Photo 2: Wide Landscape
-  "md:col-span-1 md:row-span-1 aspect-square md:aspect-auto", // Photo 3: Small Square
-  "md:col-span-1 md:row-span-1 aspect-square md:aspect-auto", // Photo 4: Small Square
-  "md:col-span-2 md:row-span-1 aspect-[2/1] md:aspect-auto",  // Photo 5: Wide Landscape
-  "md:col-span-2 md:row-span-1 aspect-[2/1] md:aspect-auto",  // Photo 6: Wide Landscape
+  "col-span-2 md:col-span-2 md:row-span-2 aspect-square md:aspect-auto", // Photo 1: Large Mobile Square
+  "col-span-1 md:col-span-2 md:row-span-1 aspect-square md:aspect-auto", // Photo 2: Half Width Mobile
+  "col-span-1 md:col-span-1 md:row-span-1 aspect-square md:aspect-auto", // Photo 3: Half Width Mobile
+  "col-span-1 md:col-span-1 md:row-span-1 aspect-square md:aspect-auto", // Photo 4: Half Width Mobile
+  "col-span-1 md:col-span-2 md:row-span-1 aspect-square md:aspect-auto", // Photo 5: Half Width Mobile
+  "col-span-2 md:col-span-2 md:row-span-1 aspect-[2/1] md:aspect-auto",  // Photo 6: Wide Mobile Landscape
 ];
 
 export default function PhotoGallery() {
@@ -49,7 +49,7 @@ export default function PhotoGallery() {
         </div>
 
         {/* Flush Bento Box Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-4 md:auto-rows-[300px] gap-4 md:gap-6 w-full">
+        <div className="grid grid-cols-2 md:grid-cols-4 md:auto-rows-[300px] gap-4 md:gap-6 w-full">
           {images.map((src, idx) => (
             <motion.div
               key={idx}
