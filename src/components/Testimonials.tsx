@@ -35,9 +35,9 @@ export default function Testimonials() {
   return (
     <section className="bg-primary text-white w-full py-24 md:py-32 relative">
       <div className="container mx-auto px-4 md:px-6 max-w-7xl">
-        <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 relative items-start">
-          {/* Left: Sticky Header */}
-          <div className="lg:w-1/3">
+        <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 relative items-stretch">
+          {/* Left: Sticky Header Container */}
+          <div className="lg:w-1/3 relative">
             <div className="lg:sticky lg:top-[30vh] flex flex-col gap-6">
               <motion.div
               initial={{ opacity: 0, x: -20 }}
