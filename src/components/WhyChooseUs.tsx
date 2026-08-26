@@ -1,91 +1,99 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { CheckCircle2, Sparkles, HeartHandshake, ShieldCheck } from "lucide-react";
-
-const features = [
-  {
-    title: "Unmatched Creativity",
-    description: "We don't just follow trends; we set them with bespoke, personalized designs tailored to your vision.",
-    icon: Sparkles,
-  },
-  {
-    title: "Stress-Free Planning",
-    description: "From conceptualization to the final toast, we handle the logistics so you can actually enjoy your event.",
-    icon: HeartHandshake,
-  },
-  {
-    title: "Flawless Execution",
-    description: "Our eagle-eye for detail ensures that your special moments run smoothly and exactly as planned.",
-    icon: ShieldCheck,
-  }
-];
+import { Sparkles, HeartHandshake, ShieldCheck } from "lucide-react";
 
 export default function WhyChooseUs() {
   return (
     <section className="py-24 bg-background w-full overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
         
-        <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
-          
-          {/* Left Side: Single Premium Video */}
-          <motion.div 
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+        {/* Header */}
+        <div className="text-center mb-16 flex flex-col items-center">
+          <motion.h2 
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8 }}
-            viewport={{ once: true, margin: "-100px" }}
-            className="w-full lg:w-1/2"
+            viewport={{ once: true }}
+            className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-primary mb-6"
           >
-            <div className="relative aspect-[4/5] sm:aspect-square md:aspect-[4/3] lg:aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
-              <video
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="absolute w-full h-[115%] -top-[15%] left-0 object-cover"
-              >
-                <source src="/videos/video-2.mp4" type="video/mp4" />
-              </video>
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent z-10 pointer-events-none" />
+            Why Choose Us
+          </motion.h2>
+          <div className="h-1 w-20 bg-secondary rounded-full mb-8" />
+          <motion.p 
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="text-lg text-foreground/70 font-light max-w-2xl"
+          >
+            With years of experience, we bring a touch of magic to every event. Our commitment to excellence ensures your special moments are nothing short of spectacular.
+          </motion.p>
+        </div>
+
+        {/* Bento Box Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-4 lg:gap-6 max-w-6xl mx-auto">
+          
+          {/* Box 1: Large Video Box (2x2) */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="md:col-span-2 md:row-span-2 relative rounded-3xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.12)] min-h-[400px] md:min-h-0"
+          >
+            <video autoPlay loop muted playsInline className="absolute w-full h-[115%] -top-[15%] left-0 object-cover">
+              <source src="/videos/video-2.mp4" type="video/mp4" />
+            </video>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
+            <div className="absolute bottom-0 left-0 p-8 md:p-10 text-white z-10">
+              <Sparkles className="text-secondary mb-4" size={32} />
+              <h3 className="text-2xl md:text-3xl font-serif font-bold mb-3">Unmatched Creativity</h3>
+              <p className="text-white/80 font-light leading-relaxed max-w-sm">We don't just follow trends; we set them with bespoke, personalized designs tailored exactly to your vision.</p>
             </div>
           </motion.div>
 
-          {/* Right Side: Text & Features */}
+          {/* Box 2: Wide Text Box (2x1) */}
           <motion.div 
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true, margin: "-100px" }}
-            className="w-full lg:w-1/2 flex flex-col justify-center"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            viewport={{ once: true }}
+            className="md:col-span-2 md:row-span-1 bg-primary rounded-3xl p-8 md:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.12)] flex flex-col justify-center relative overflow-hidden"
           >
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-primary mb-6 leading-tight">
-              Why Choose Us
-            </h2>
-            <div className="h-1 w-20 bg-secondary rounded-full mb-8" />
-            
-            <p className="text-lg text-foreground/80 font-light leading-relaxed mb-12">
-              With years of experience, we bring a touch of magic to every event. Our commitment to excellence and eye for detail ensures that your special moments are nothing short of spectacular.
-            </p>
-
-            <div className="space-y-8">
-              {features.map((feature, idx) => (
-                <div key={idx} className="flex gap-5">
-                  <div className="flex-shrink-0 mt-1">
-                    <div className="w-12 h-12 rounded-full bg-primary/5 flex items-center justify-center text-primary">
-                      <feature.icon size={24} />
-                    </div>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold font-serif text-primary mb-2">
-                      {feature.title}
-                    </h3>
-                    <p className="text-foreground/70 font-light leading-relaxed">
-                      {feature.description}
-                    </p>
-                  </div>
-                </div>
-              ))}
+            <div className="absolute -right-10 -top-10 text-white/5 pointer-events-none">
+              <HeartHandshake size={200} />
             </div>
+            <div className="relative z-10">
+              <h3 className="text-2xl md:text-3xl font-serif font-bold text-white mb-3">Stress-Free Planning</h3>
+              <p className="text-white/70 font-light leading-relaxed max-w-md">From conceptualization to the final toast, we handle the logistics so you can actually enjoy your event without lifting a single finger.</p>
+            </div>
+          </motion.div>
+
+          {/* Box 3: Square Photo (1x1) */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="md:col-span-1 md:row-span-1 relative rounded-3xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.12)] min-h-[250px] md:min-h-0"
+          >
+            <div className="absolute w-full h-[115%] -top-[15%] left-0 bg-cover bg-center" style={{ backgroundImage: "url('/gallery/photo-6.jpg')" }} />
+          </motion.div>
+
+          {/* Box 4: Square Text Box (1x1) */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            viewport={{ once: true }}
+            className="md:col-span-1 md:row-span-1 bg-white rounded-3xl p-6 md:p-8 shadow-[0_8px_30px_rgb(0,0,0,0.08)] flex flex-col justify-center items-center text-center border border-primary/5"
+          >
+            <div className="w-16 h-16 rounded-full bg-secondary/10 flex items-center justify-center mb-5">
+              <ShieldCheck className="text-secondary" size={32} />
+            </div>
+            <h3 className="text-xl font-serif font-bold text-primary mb-2">Flawless<br/>Execution</h3>
+            <p className="text-foreground/60 text-sm font-light">Our eagle-eye for detail ensures absolute perfection.</p>
           </motion.div>
 
         </div>
