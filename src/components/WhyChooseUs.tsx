@@ -2,8 +2,11 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 export default function WhyChooseUs() {
+  const [activeIdx, setActiveIdx] = useState<number | null>(null);
+
   const polaroids = [
     {
       src: "/gallery/photo-13.jpg",
@@ -87,11 +90,12 @@ export default function WhyChooseUs() {
             {polaroids.map((polaroid, idx) => (
               <motion.div
                 key={idx}
+                onClick={() => setActiveIdx(activeIdx === idx ? null : idx)}
                 initial={{ opacity: 0, scale: 0.8, rotate: 0 }}
                 whileInView={{ opacity: 1, scale: 1, rotate: polaroid.rotate === "rotate-3" ? 3 : (polaroid.rotate === "-rotate-6" ? -6 : -2) }}
                 transition={{ duration: 0.6, delay: idx * 0.2 }}
                 viewport={{ once: true }}
-                className={`absolute ${polaroid.position} ${polaroid.width} ${polaroid.zIndex} hover:z-40 transition-all duration-300 hover:scale-105 group cursor-pointer`}
+                className={`absolute ${polaroid.position} ${polaroid.width} ${activeIdx === idx ? 'z-50 scale-105' : polaroid.zIndex} hover:z-50 transition-all duration-300 hover:scale-105 group cursor-pointer`}
               >
                 {/* Polaroid Frame */}
                 <div className="bg-white p-2 sm:p-3 pb-10 sm:pb-12 shadow-[0_15px_35px_-10px_rgba(0,0,0,0.15)] rounded-sm group-hover:shadow-[0_20px_40px_-10px_rgba(0,0,0,0.25)] transition-shadow">
