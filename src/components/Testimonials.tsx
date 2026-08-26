@@ -36,10 +36,10 @@ export default function Testimonials() {
     <section className="bg-primary text-white w-full py-24 md:py-32 relative">
       <div className="container mx-auto px-4 md:px-6 max-w-7xl">
         <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 relative items-start">
-          
           {/* Left: Sticky Header */}
-          <div className="lg:w-1/3 lg:sticky lg:top-1/2 lg:-translate-y-1/2 flex flex-col gap-6">
-            <motion.div
+          <div className="lg:w-1/3">
+            <div className="lg:sticky lg:top-[30vh] flex flex-col gap-6">
+              <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
@@ -72,6 +72,7 @@ export default function Testimonials() {
                 </div>
               </div>
             </motion.div>
+            </div>
           </div>
 
           {/* Right: Scrolling Review Cards */}
