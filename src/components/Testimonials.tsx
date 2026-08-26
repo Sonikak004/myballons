@@ -96,22 +96,28 @@ export default function Testimonials() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: idx * 0.1 }}
                   viewport={{ once: true, margin: "-50px" }}
-                  className="w-[85vw] md:w-[400px] lg:w-full shrink-0 snap-center bg-white/5 border border-white/10 p-8 md:p-12 rounded-[2rem] relative hover:bg-white/10 transition-colors duration-500"
+                  className="w-[85vw] md:w-[400px] lg:w-full shrink-0 snap-center bg-white/5 border border-white/10 p-8 md:p-12 rounded-[2rem] relative hover:bg-white/10 transition-colors duration-500 flex flex-col items-center text-center lg:items-start lg:text-left"
                 >
-                  <Quote className="absolute top-8 right-8 text-white/5" size={80} />
-                  <div className="flex gap-1 mb-6 text-accent">
+                  <Quote className="absolute top-8 right-8 lg:right-8 text-white/5" size={80} />
+                  
+                  {/* Stars */}
+                  <div className="flex justify-center lg:justify-start gap-1 mb-6 text-accent w-full">
                     {[...Array(5)].map((_, i) => (
                       <Star key={i} fill="currentColor" size={20} />
                     ))}
                   </div>
+                  
+                  {/* Review Text */}
                   <p className="text-lg md:text-xl lg:text-2xl text-white/90 font-serif font-light leading-relaxed mb-8 relative z-10 whitespace-normal">
                     "{review.text}"
                   </p>
-                  <div className="flex items-center gap-4 relative z-10">
+                  
+                  {/* Reviewer Info */}
+                  <div className="flex flex-col lg:flex-row items-center lg:items-center gap-3 lg:gap-4 relative z-10">
                     <div className="w-12 h-12 rounded-full bg-secondary text-white flex items-center justify-center font-bold font-serif text-lg shrink-0">
                       {review.name.charAt(0)}
                     </div>
-                    <div>
+                    <div className="flex flex-col items-center lg:items-start">
                       <h4 className="font-bold text-base md:text-lg text-white tracking-wide">{review.name}</h4>
                       <span className="text-white/50 text-xs md:text-sm tracking-wider uppercase font-medium">Verified Client</span>
                     </div>
