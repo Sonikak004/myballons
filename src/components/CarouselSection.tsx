@@ -67,10 +67,13 @@ export default function CarouselSection() {
                 className="embla__slide flex-[0_0_85%] sm:flex-[0_0_60%] md:flex-[0_0_40%] lg:flex-[0_0_30%] min-w-0 pl-6"
               >
                 <div 
-                  className="relative aspect-[16/10] md:aspect-[16/9] rounded-2xl overflow-hidden shadow-lg bg-cover bg-center"
-                  style={{ backgroundImage: `url('${src}')` }}
+                  className="relative aspect-[16/10] md:aspect-[16/9] rounded-2xl overflow-hidden shadow-lg group"
                 >
-                  <div className="absolute inset-0 bg-primary/10 transition-opacity hover:opacity-0" />
+                  <div 
+                    className="absolute w-full h-[115%] -top-[15%] left-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105 origin-bottom"
+                    style={{ backgroundImage: `url('${src}')` }} 
+                  />
+                  <div className="absolute inset-0 bg-primary/10 transition-opacity group-hover:opacity-0 z-10 pointer-events-none" />
                 </div>
               </div>
             ))}

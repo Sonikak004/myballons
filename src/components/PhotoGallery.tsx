@@ -48,10 +48,10 @@ export default function PhotoGallery() {
               className="relative aspect-square md:aspect-[4/3] rounded-xl overflow-hidden group cursor-pointer"
             >
               <div 
-                className="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                className="absolute w-full h-[115%] -top-[15%] left-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110 origin-bottom"
                 style={{ backgroundImage: `url('${src}')` }}
               />
-              <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/20 transition-colors duration-500" />
+              <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/20 transition-colors duration-500 z-10 pointer-events-none" />
             </motion.div>
           ))}
         </div>

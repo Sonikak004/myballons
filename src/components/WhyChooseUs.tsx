@@ -42,11 +42,11 @@ export default function WhyChooseUs() {
                 loop
                 muted
                 playsInline
-                className="w-full h-full object-cover scale-105"
+                className="absolute w-full h-[115%] -top-[15%] left-0 object-cover"
               >
                 <source src="/videos/video-2.mp4" type="video/mp4" />
               </video>
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent z-10 pointer-events-none" />
             </div>
           </motion.div>
 

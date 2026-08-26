@@ -25,9 +25,9 @@ export default function Hero() {
             video.currentTime = 3;
             video.play();
           }}
-          // To crop the logo at the top left on mobile, we make the video 35% taller than the screen
-          // and shift it up by 35%, so the top portion is completely cut off.
-          className="absolute w-full h-[135%] -top-[35%] left-0 object-cover md:h-full md:-top-0 md:scale-105"
+          // To globally crop the watermark logo/number at the top, we make the video 20% taller
+          // and shift it up by 20%, cutting the top off entirely across all devices.
+          className="absolute w-full h-[120%] -top-[20%] left-0 object-cover"
         >
           <source src="/videos/video-1.mp4" type="video/mp4" />
         </video>
