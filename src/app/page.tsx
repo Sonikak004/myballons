@@ -1,5 +1,6 @@
 import Hero from "@/components/Hero";
 import WhyChooseUs from "@/components/WhyChooseUs";
+import StatsSection from "@/components/StatsSection";
 import PhotoGallery from "@/components/PhotoGallery";
 import Services from "@/components/Services";
 import StackedEvents from "@/components/StackedEvents";
@@ -14,6 +15,7 @@ export default function Home() {
       <Hero />
       <WhyChooseUs />
       <Services />
+      <StatsSection />
       <PhotoGallery />
       <StackedEvents />
       <CarouselSection />
