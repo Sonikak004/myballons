@@ -10,24 +10,24 @@ export default function WhyChooseUs() {
       caption: "Stuthi's 1st Birthday",
       rotate: "-rotate-6",
       zIndex: "z-10",
-      position: "top-[5%] left-[2%] md:top-[5%] md:left-[5%]",
-      width: "w-[200px] sm:w-[230px] md:w-[280px]"
+      position: "top-[5%] left-[2%] md:top-[5%] md:left-[10%]",
+      width: "w-[200px] sm:w-[230px] md:w-[240px]"
     },
     {
       src: "/gallery/photo-14.jpg",
       caption: "Ushith Reddy, Turns 1",
       rotate: "rotate-3",
       zIndex: "z-20",
-      position: "top-[25%] right-[2%] md:top-[25%] md:right-[5%]",
-      width: "w-[220px] sm:w-[250px] md:w-[300px]"
+      position: "top-[25%] right-[2%] md:top-[15%] md:right-[5%]",
+      width: "w-[220px] sm:w-[250px] md:w-[260px]"
     },
     {
       src: "/gallery/photo-15.jpg",
       caption: "Flawless Execution",
       rotate: "-rotate-2",
       zIndex: "z-30",
-      position: "bottom-[5%] left-[10%] md:bottom-[5%] md:left-[15%]",
-      width: "w-[210px] sm:w-[240px] md:w-[290px]"
+      position: "bottom-[5%] left-[10%] md:bottom-[5%] md:left-[20%]",
+      width: "w-[210px] sm:w-[240px] md:w-[250px]"
     }
   ];
 
@@ -53,11 +53,11 @@ export default function WhyChooseUs() {
   ];
 
   return (
-    <section id="why-choose-us" className="py-24 bg-white w-full overflow-hidden">
+    <section id="why-choose-us" className="py-12 lg:py-16 bg-white w-full overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
         
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16 md:mb-24">
+        <div className="text-center max-w-2xl mx-auto mb-12 lg:mb-16">
           <motion.h2 
             initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
@@ -79,10 +79,10 @@ export default function WhyChooseUs() {
         </div>
 
         {/* Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-12 items-center max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center max-w-6xl mx-auto">
           
           {/* Left: Polaroid Stack (Scrapbook Idea) */}
-          <div className="relative w-full h-[450px] sm:h-[500px] md:h-[700px] flex items-center justify-center">
+          <div className="relative w-full h-[450px] sm:h-[500px] md:h-[550px] flex items-center justify-center">
             {/* Background decorative elements */}
             <div className="absolute top-[10%] left-[20%] w-3 h-3 rounded-full bg-accent opacity-70" />
             <div className="absolute top-[40%] right-[10%] w-2 h-2 rounded-full bg-secondary opacity-70" />
@@ -127,7 +127,7 @@ export default function WhyChooseUs() {
           </div>
 
           {/* Right: Text Tags */}
-          <div className="flex flex-col gap-10 md:gap-12 pl-0 md:pl-10 lg:pl-16">
+          <div className="flex flex-col gap-8 md:gap-10 pl-0 md:pl-10 lg:pl-16">
             {features.map((feature, idx) => (
               <motion.div 
                 key={idx}
