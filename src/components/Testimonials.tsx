@@ -76,36 +76,38 @@ export default function Testimonials() {
           </div>
 
           {/* Right: Scrolling Review Cards */}
-          <div className="lg:w-2/3 flex flex-col gap-8 md:gap-12 w-full">
-            {testimonials.map((review, idx) => (
-              <motion.div
-                key={review.id}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: idx * 0.1 }}
-                viewport={{ once: true, margin: "-100px" }}
-                className="bg-white/5 border border-white/10 p-8 md:p-12 rounded-[2rem] relative hover:bg-white/10 transition-colors duration-500"
-              >
-                <Quote className="absolute top-8 right-8 text-white/5" size={80} />
-                <div className="flex gap-1 mb-6 text-accent">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} fill="currentColor" size={20} />
-                  ))}
-                </div>
-                <p className="text-xl md:text-2xl text-white/90 font-serif font-light leading-relaxed mb-8 relative z-10">
-                  "{review.text}"
-                </p>
-                <div className="flex items-center gap-4 relative z-10">
-                  <div className="w-12 h-12 rounded-full bg-secondary text-white flex items-center justify-center font-bold font-serif text-lg">
-                    {review.name.charAt(0)}
+          <div className="lg:w-2/3 w-full">
+            <div className="flex flex-row lg:flex-col overflow-x-auto lg:overflow-visible gap-6 lg:gap-12 pb-8 lg:pb-0 snap-x snap-mandatory [scrollbar-width:none] [&::-webkit-scrollbar]:hidden w-[calc(100vw-2rem)] md:w-full -mx-4 px-4 md:mx-0 md:px-0">
+              {testimonials.map((review, idx) => (
+                <motion.div
+                  key={review.id}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: idx * 0.1 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  className="w-[85vw] md:w-[400px] lg:w-full shrink-0 snap-center bg-white/5 border border-white/10 p-8 md:p-12 rounded-[2rem] relative hover:bg-white/10 transition-colors duration-500"
+                >
+                  <Quote className="absolute top-8 right-8 text-white/5" size={80} />
+                  <div className="flex gap-1 mb-6 text-accent">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} fill="currentColor" size={20} />
+                    ))}
                   </div>
-                  <div>
-                    <h4 className="font-bold text-lg text-white tracking-wide">{review.name}</h4>
-                    <span className="text-white/50 text-sm tracking-wider uppercase font-medium">Verified Client</span>
+                  <p className="text-lg md:text-xl lg:text-2xl text-white/90 font-serif font-light leading-relaxed mb-8 relative z-10 whitespace-normal">
+                    "{review.text}"
+                  </p>
+                  <div className="flex items-center gap-4 relative z-10">
+                    <div className="w-12 h-12 rounded-full bg-secondary text-white flex items-center justify-center font-bold font-serif text-lg shrink-0">
+                      {review.name.charAt(0)}
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-base md:text-lg text-white tracking-wide">{review.name}</h4>
+                      <span className="text-white/50 text-xs md:text-sm tracking-wider uppercase font-medium">Verified Client</span>
+                    </div>
                   </div>
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              ))}
+            </div>
           </div>
 
         </div>
