@@ -7,7 +7,7 @@ import { Star } from "lucide-react";
 function Counter({ end, duration = 2, decimals = 0, suffix = "" }: { end: number, duration?: number, decimals?: number, suffix?: string }) {
   const [count, setCount] = useState(0);
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const isInView = useInView(ref, { once: true, amount: 0.8, margin: "0px 0px -50px 0px" });
 
   useEffect(() => {
     if (isInView) {
@@ -50,7 +50,7 @@ export default function StatsCounter() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: idx * 0.2 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.8 }}
               className="flex flex-col items-center text-center group"
             >
               {/* Modest Elegant Number */}
