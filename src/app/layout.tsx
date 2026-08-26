@@ -25,7 +25,6 @@ export const viewport = {
 };
 
 import SmoothScroller from "@/components/SmoothScroller";
-import FloatingBalloons from "@/components/FloatingBalloons";
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -35,7 +34,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       suppressHydrationWarning
     >
       <body className="min-h-screen font-sans bg-background text-foreground" suppressHydrationWarning>
-        <FloatingBalloons />
         <SmoothScroller>
           {children}
         </SmoothScroller>
