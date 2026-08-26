@@ -24,7 +24,7 @@ export default function ParallaxSection() {
         className="absolute inset-0 z-0 w-full h-[120%]"
         style={{ y }}
       >
-        <div className="absolute w-full h-[115%] -top-[15%] left-0">
+        <div className="absolute w-full h-[125%] -top-[25%] left-0">
           <Image
             src="/gallery/photo-3.jpg"
             alt="Beautiful balloon decoration"

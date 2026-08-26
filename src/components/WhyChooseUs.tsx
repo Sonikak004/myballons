@@ -69,7 +69,7 @@ export default function WhyChooseUs() {
                 onLoadedData={(e) => {
                   e.currentTarget.currentTime = 3; // Skip first 3 seconds universally
                 }}
-                className={`absolute w-full h-[115%] -top-[15%] left-0 object-cover transition-opacity duration-700 ease-in-out ${
+                className={`absolute w-full h-[125%] -top-[25%] left-0 object-cover transition-opacity duration-700 ease-in-out ${
                   idx === activeVideo ? "opacity-100" : "opacity-0"
                 }`}
               >

@@ -75,7 +75,7 @@ export default function StackedEvents() {
             <div className="w-full h-full flex flex-col md:flex-row">
               {/* Left Image */}
               <div className="w-full md:w-1/2 h-[50vh] md:h-full relative overflow-hidden">
-                <div className="absolute w-full h-[115%] -top-[15%] left-0">
+                <div className="absolute w-full h-[125%] -top-[25%] left-0">
                   <Image
                     src={event.image}
                     alt={event.title}

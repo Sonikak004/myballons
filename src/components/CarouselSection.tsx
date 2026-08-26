@@ -70,7 +70,7 @@ export default function CarouselSection() {
                 <div 
                   className="relative aspect-[16/10] md:aspect-[16/9] rounded-2xl overflow-hidden shadow-lg group"
                 >
-                  <div className="absolute w-full h-[115%] -top-[15%] left-0 transition-transform duration-700 group-hover:scale-105 origin-center">
+                  <div className="absolute w-full h-[125%] -top-[25%] left-0 transition-transform duration-700 group-hover:scale-105 origin-center">
                     <Image 
                       src={src}
                       alt="Event Setup Showcase"

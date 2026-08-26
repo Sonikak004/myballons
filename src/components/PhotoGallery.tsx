@@ -48,7 +48,7 @@ export default function PhotoGallery() {
             viewport={{ once: true }}
             className="md:col-span-8 md:row-span-1 relative aspect-[16/9] md:aspect-auto rounded-3xl overflow-hidden group cursor-pointer shadow-xl"
           >
-            <div className="absolute w-full h-[115%] -top-[15%] left-0 transition-transform duration-700 group-hover:scale-105 origin-center">
+            <div className="absolute w-full h-[125%] -top-[25%] left-0 transition-transform duration-700 group-hover:scale-105 origin-center">
               <Image
                 src="/gallery/photo-13.jpg"
                 alt="Grand Corporate Setup"
@@ -68,7 +68,7 @@ export default function PhotoGallery() {
             viewport={{ once: true }}
             className="md:col-span-4 md:row-span-2 relative aspect-[3/4] md:aspect-auto rounded-3xl overflow-hidden group cursor-pointer shadow-xl"
           >
-            <div className="absolute w-full h-[115%] -top-[15%] left-0 transition-transform duration-700 group-hover:scale-105 origin-center">
+            <div className="absolute w-full h-[125%] -top-[25%] left-0 transition-transform duration-700 group-hover:scale-105 origin-center">
               <Image
                 src="/gallery/photo-14.jpg"
                 alt="Elegant Wedding Arch"
@@ -88,7 +88,7 @@ export default function PhotoGallery() {
             viewport={{ once: true }}
             className="md:col-span-4 md:row-span-1 relative aspect-square md:aspect-auto rounded-3xl overflow-hidden group cursor-pointer shadow-xl"
           >
-            <div className="absolute w-full h-[115%] -top-[15%] left-0 transition-transform duration-700 group-hover:scale-105 origin-center">
+            <div className="absolute w-full h-[125%] -top-[25%] left-0 transition-transform duration-700 group-hover:scale-105 origin-center">
               <Image
                 src="/gallery/photo-15.jpg"
                 alt="Neon Birthday Party"
@@ -108,7 +108,7 @@ export default function PhotoGallery() {
             viewport={{ once: true }}
             className="md:col-span-4 md:row-span-1 relative aspect-[4/3] md:aspect-auto rounded-3xl overflow-hidden group cursor-pointer shadow-xl"
           >
-            <div className="absolute w-full h-[115%] -top-[15%] left-0 transition-transform duration-700 group-hover:scale-105 origin-center">
+            <div className="absolute w-full h-[125%] -top-[25%] left-0 transition-transform duration-700 group-hover:scale-105 origin-center">
               <Image
                 src="/gallery/photo-16.jpg"
                 alt="Intimate Anniversary Dinner"
@@ -128,7 +128,7 @@ export default function PhotoGallery() {
             viewport={{ once: true }}
             className="md:col-span-5 md:row-span-1 relative aspect-[16/9] md:aspect-auto rounded-3xl overflow-hidden group cursor-pointer shadow-xl"
           >
-            <div className="absolute w-full h-[115%] -top-[15%] left-0 transition-transform duration-700 group-hover:scale-105 origin-center">
+            <div className="absolute w-full h-[125%] -top-[25%] left-0 transition-transform duration-700 group-hover:scale-105 origin-center">
               <Image
                 src="/gallery/photo-17.jpg"
                 alt="Floral Centerpiece"
@@ -148,7 +148,7 @@ export default function PhotoGallery() {
             viewport={{ once: true }}
             className="md:col-span-7 md:row-span-1 relative aspect-[21/9] md:aspect-auto rounded-3xl overflow-hidden group cursor-pointer shadow-xl"
           >
-            <div className="absolute w-full h-[115%] -top-[15%] left-0 transition-transform duration-700 group-hover:scale-105 origin-center">
+            <div className="absolute w-full h-[125%] -top-[25%] left-0 transition-transform duration-700 group-hover:scale-105 origin-center">
               <Image
                 src="/gallery/photo-18.jpg"
                 alt="Outdoor Event Lighting"
