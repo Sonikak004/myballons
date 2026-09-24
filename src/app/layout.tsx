@@ -13,8 +13,17 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "My Balloons My Prop's - Event Management",
-  description: "Specializing in creating unforgettable experiences for every occasion.",
+  title: "My Balloons My Prop's | Best Event Planners & Decorators in Bangalore",
+  description: "Top-rated event management company in Bengaluru. Specializing in luxury weddings, corporate events, birthday balloon decorations, and custom themes.",
+  keywords: ["Event Planners Bangalore", "Balloon Decoration Bangalore", "Wedding Decorators Begur", "Corporate Event Management", "Birthday Planners Bengaluru", "My Balloons My Props"],
+  openGraph: {
+    title: "My Balloons My Prop's | Event Planners in Bangalore",
+    description: "Creating unforgettable experiences. Book Bangalore's best decorators for your next event!",
+    url: "https://myballoonsmyprops.com",
+    siteName: "My Balloons My Prop's",
+    locale: "en_IN",
+    type: "website",
+  },
 };
 
 export const viewport = {
@@ -25,6 +34,7 @@ export const viewport = {
 };
 
 import SmoothScroller from "@/components/SmoothScroller";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -36,6 +46,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="min-h-screen font-sans bg-background text-foreground" suppressHydrationWarning>
         <SmoothScroller>
           {children}
+          <FloatingWhatsApp />
         </SmoothScroller>
       </body>
     </html>

@@ -7,17 +7,17 @@ import { motion } from 'framer-motion'
 import Image from 'next/image'
 
 const slides = [
-  "/gallery/photo-7.jpg",
-  "/gallery/photo-8.jpg",
-  "/gallery/photo-9.jpg",
-  "/gallery/photo-10.jpg",
-  "/gallery/photo-11.jpg",
+  "/gallery/photo-14.jpg",
+  "/gallery/photo-15.webp",
+  "/gallery/photo-16.jpg",
+  "/gallery/photo-17.jpg",
+  "/gallery/photo-18.jpg",
   // Duplicates for seamless reel effect
-  "/gallery/photo-7.jpg",
-  "/gallery/photo-8.jpg",
-  "/gallery/photo-9.jpg",
-  "/gallery/photo-10.jpg",
-  "/gallery/photo-11.jpg",
+  "/gallery/photo-14.jpg",
+  "/gallery/photo-15.webp",
+  "/gallery/photo-16.jpg",
+  "/gallery/photo-17.jpg",
+  "/gallery/photo-18.jpg",
 ]
 
 export default function CarouselSection() {

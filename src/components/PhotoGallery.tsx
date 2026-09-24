@@ -4,12 +4,12 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 const images = [
+  "/gallery/photo-8.jpg",
+  "/gallery/photo-9.jpg",
+  "/gallery/photo-10.jpg",
+  "/gallery/photo-11.jpg",
+  "/gallery/photo-12.jpg",
   "/gallery/photo-13.jpg",
-  "/gallery/photo-14.jpg",
-  "/gallery/photo-15.jpg",
-  "/gallery/photo-16.jpg",
-  "/gallery/photo-17.jpg",
-  "/gallery/photo-2.jpg",
 ];
 
 // Tailwind classes for the perfect flush bento box, completely responsive!

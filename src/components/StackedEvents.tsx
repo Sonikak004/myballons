@@ -9,7 +9,7 @@ const events = [
     title: "Corporate Excellence Gala",
     category: "Corporate Events",
     desc: "A sophisticated setup designed for a fortune 500 company, featuring elegant lighting and bespoke centerpieces.",
-    image: "/gallery/photo-12.jpg",
+    image: "/gallery/photo-1.jpg",
     bgColor: "bg-[#fcfbf8]",
   },
   {
@@ -17,7 +17,7 @@ const events = [
     title: "Enchanted Garden Wedding",
     category: "Weddings",
     desc: "A breathtaking outdoor ceremony with lush floral arches, romantic seating, and fairy lights.",
-    image: "/gallery/photo-13.jpg",
+    image: "/gallery/photo-2.jpg",
     bgColor: "bg-white",
   },
   {
@@ -25,7 +25,7 @@ const events = [
     title: "Neon Birthday Bash",
     category: "Private Parties",
     desc: "A high-energy birthday celebration complete with neon signs, custom dance floors, and dynamic lighting.",
-    image: "/gallery/photo-14.jpg",
+    image: "/gallery/photo-10.jpg",
     bgColor: "bg-[#fcfbf8]",
   },
   {
@@ -33,7 +33,7 @@ const events = [
     title: "Elegant Anniversary Setup",
     category: "Celebrations",
     desc: "An intimate and luxurious setting to celebrate years of togetherness, featuring custom photo walls.",
-    image: "/gallery/photo-15.jpg",
+    image: "/gallery/photo-17.jpg",
     bgColor: "bg-white",
   },
 ];
