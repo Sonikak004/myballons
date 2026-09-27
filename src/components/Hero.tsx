@@ -15,6 +15,7 @@ export default function Hero() {
           autoPlay
           muted
           playsInline
+          poster="/gallery/photo-1.jpg"
           onLoadedMetadata={(e) => {
             (e.target as HTMLVideoElement).currentTime = 5;
           }}

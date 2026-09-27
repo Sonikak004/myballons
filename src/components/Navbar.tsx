@@ -44,6 +44,7 @@ export default function Navbar() {
               alt="My Balloons My Prop's"
               fill
               className="object-contain"
+              priority
             />
           </div>
         </Link>
