@@ -14,8 +14,15 @@ export default function Hero() {
         <video
           autoPlay
           muted
-          loop
           playsInline
+          onLoadedMetadata={(e) => {
+            (e.target as HTMLVideoElement).currentTime = 5;
+          }}
+          onEnded={(e) => {
+            const video = e.target as HTMLVideoElement;
+            video.currentTime = 5;
+            video.play();
+          }}
           className="absolute w-full h-[125%] -top-[25%] md:h-[120%] md:-top-[20%] left-0 object-cover object-center"
         >
           <source src="/videos/hero-main.mp4" type="video/mp4" />

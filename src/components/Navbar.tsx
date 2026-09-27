@@ -51,18 +51,29 @@ export default function Navbar() {
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
-            <Link
+            <a
               key={link.name}
               href={link.href}
+              onClick={(e) => {
+                if (link.href.startsWith('#') && link.href.length > 1) {
+                  e.preventDefault();
+                  document.getElementById(link.href.substring(1))?.scrollIntoView({ behavior: 'smooth' });
+                } else if (link.href === '#') {
+                  e.preventDefault();
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+              }}
               className={`text-sm font-medium tracking-wide transition-colors ${
                 isScrolled ? "text-foreground hover:text-secondary" : "text-white hover:text-accent"
               }`}
             >
               {link.name}
-            </Link>
+            </a>
           ))}
-          <Link
-            href="#contact"
+          <a
+            href="https://wa.me/919035106677"
+            target="_blank"
+            rel="noopener noreferrer"
             className={`px-5 py-2 rounded-full font-medium transition-all ${
               isScrolled
                 ? "bg-primary text-primary-foreground hover:bg-primary/90"
@@ -70,7 +81,7 @@ export default function Navbar() {
             }`}
           >
             Get in Touch
-          </Link>
+          </a>
         </nav>
 
         {/* Mobile Toggle */}
@@ -94,14 +105,30 @@ export default function Navbar() {
           >
             <div className="flex flex-col p-4 space-y-4">
               {navLinks.map((link) => (
-                <Link
+                <a
                   key={link.name}
                   href={link.href}
                   className="text-foreground text-lg font-medium py-2 border-b border-border/50"
-                  onClick={() => setMobileMenuOpen(false)}
+                  onClick={(e) => {
+                    if (link.href.startsWith('#') && link.href.length > 1) {
+                      e.preventDefault();
+                      setMobileMenuOpen(false);
+                      setTimeout(() => {
+                        document.getElementById(link.href.substring(1))?.scrollIntoView({ behavior: 'smooth' });
+                      }, 100); // small delay to let menu close
+                    } else if (link.href === '#') {
+                      e.preventDefault();
+                      setMobileMenuOpen(false);
+                      setTimeout(() => {
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                      }, 100);
+                    } else {
+                      setMobileMenuOpen(false);
+                    }
+                  }}
                 >
                   {link.name}
-                </Link>
+                </a>
               ))}
             </div>
           </motion.div>

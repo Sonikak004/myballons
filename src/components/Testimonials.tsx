@@ -1,53 +1,15 @@
 "use client";
 
-import { motion, AnimatePresence } from "framer-motion";
-import { Star, Quote, ChevronLeft, ChevronRight } from "lucide-react";
-import { useState } from "react";
-
-const testimonials = [
-  {
-    id: 1,
-    name: "Anjali M.",
-    text: "My Balloons My Props made my daughter's 1st birthday an absolute dream! The decorations were flawlessly executed and the team was so professional. Highly recommend for any event in Bangalore!",
-  },
-  {
-    id: 2,
-    name: "Rohan K.",
-    text: "Unmatched creativity and stress-free planning. They handled our corporate gala with such precision, transforming the venue completely. Truly the best event management company.",
-  },
-  {
-    id: 3,
-    name: "Sneha P.",
-    text: "We hired them for our engagement party and the floral setups were breathtaking. They listened to our ideas and brought them to life beyond our expectations. 10/10!",
-  },
-  {
-    id: 4,
-    name: "Kavita S.",
-    text: "The baby shower decorations were straight out of a fairy tale! The balloon arches and pastel themes were just gorgeous. Thank you for making it so special.",
-  },
-  {
-    id: 5,
-    name: "Arjun D.",
-    text: "Absolutely brilliant service. We needed a massive stage setup for a product launch and they delivered perfection without any hassle. Highly recommended.",
-  }
-];
+import { motion } from "framer-motion";
+import { Star } from "lucide-react";
+import Script from "next/script";
 
 export default function Testimonials() {
-  const [activeIdx, setActiveIdx] = useState(0);
-
-  const nextReview = () => {
-    setActiveIdx((prev) => (prev + 1) % testimonials.length);
-  };
-
-  const prevReview = () => {
-    setActiveIdx((prev) => (prev - 1 + testimonials.length) % testimonials.length);
-  };
-
   return (
     <section className="bg-primary text-white w-full min-h-[100svh] flex flex-col justify-center py-12 md:py-32 relative">
       <div className="container mx-auto px-4 md:px-6 max-w-7xl flex flex-col justify-center">
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-24 relative items-stretch">
-          {/* Left: Sticky Header Container */}
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-24 relative items-start">
+          {/* Left: Header Container */}
           <div className="lg:w-1/3 relative">
             <div className="lg:sticky lg:top-[30vh] flex flex-col gap-4 lg:gap-6">
               <motion.div
@@ -87,106 +49,10 @@ export default function Testimonials() {
             </div>
           </div>
 
-          {/* Right: Desktop Scrolling Review Cards */}
-          <div className="hidden lg:flex lg:w-2/3 flex-col gap-12 w-full">
-            {testimonials.map((review, idx) => (
-              <motion.div
-                key={review.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: idx * 0.1 }}
-                viewport={{ once: true, margin: "-50px" }}
-                className="w-full shrink-0 bg-white/5 border border-white/10 p-12 rounded-[2rem] relative hover:bg-white/10 transition-colors duration-500 flex flex-col items-start text-left"
-              >
-                <Quote className="absolute top-8 right-8 text-white/5" size={80} />
-                
-                <div className="flex justify-start gap-1 mb-6 text-accent w-full">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} fill="currentColor" size={20} />
-                  ))}
-                </div>
-                
-                <p className="text-2xl text-white/90 font-serif font-light leading-relaxed mb-8 relative z-10 whitespace-normal">
-                  "{review.text}"
-                </p>
-                
-                <div className="flex flex-row items-center justify-start gap-4 relative z-10 w-full mt-auto">
-                  <div className="w-12 h-12 rounded-full bg-secondary text-white flex items-center justify-center font-bold font-serif text-lg shrink-0">
-                    {review.name.charAt(0)}
-                  </div>
-                  <div className="flex flex-col items-start text-left">
-                    <h4 className="font-bold text-lg text-white tracking-wide leading-tight">{review.name}</h4>
-                    <span className="text-white/50 text-sm tracking-wider uppercase font-medium mt-1">Verified Client</span>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-          {/* Right: Mobile Single Card Viewer */}
-          <div className="lg:hidden w-full flex flex-col items-center">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={activeIdx}
-                initial={{ opacity: 0, scale: 0.95, y: 10 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.95, y: -10 }}
-                transition={{ duration: 0.3 }}
-                className="w-full bg-white/5 border border-white/10 p-6 sm:p-8 rounded-[1.5rem] relative flex flex-col items-center text-center shadow-2xl"
-              >
-                <Quote className="absolute top-4 right-4 text-white/5" size={40} />
-                
-                <div className="flex justify-center gap-1 mb-4 text-accent w-full">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} fill="currentColor" size={14} />
-                  ))}
-                </div>
-                
-                <p className="text-sm sm:text-base text-white/90 font-serif font-light leading-relaxed mb-6 relative z-10 line-clamp-4">
-                  "{testimonials[activeIdx].text}"
-                </p>
-                
-                <div className="flex flex-row items-center justify-center gap-3 relative z-10 w-full mt-auto">
-                  <div className="w-10 h-10 rounded-full bg-secondary text-white flex items-center justify-center font-bold font-serif text-base shrink-0 shadow-lg">
-                    {testimonials[activeIdx].name.charAt(0)}
-                  </div>
-                  <div className="flex flex-col items-start text-left">
-                    <h4 className="font-bold text-sm text-white tracking-wide leading-tight">{testimonials[activeIdx].name}</h4>
-                    <span className="text-white/50 text-[10px] tracking-wider uppercase font-medium mt-0.5">Verified Client</span>
-                  </div>
-                </div>
-              </motion.div>
-            </AnimatePresence>
-
-            {/* Slide Controls */}
-            <div className="flex items-center justify-center gap-4 mt-6">
-              <button 
-                onClick={prevReview}
-                className="p-2 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 transition-colors active:scale-95"
-                aria-label="Previous review"
-              >
-                <ChevronLeft size={16} className="text-white/70" />
-              </button>
-              
-              <div className="flex gap-2">
-                {testimonials.map((_, i) => (
-                  <button
-                    key={i}
-                    onClick={() => setActiveIdx(i)}
-                    className={`h-1.5 rounded-full transition-all duration-300 ${i === activeIdx ? 'bg-secondary w-6' : 'bg-white/20 w-1.5'}`}
-                    aria-label={`Go to review ${i + 1}`}
-                  />
-                ))}
-              </div>
-
-              <button 
-                onClick={nextReview}
-                className="p-2 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 transition-colors active:scale-95"
-                aria-label="Next review"
-              >
-                <ChevronRight size={16} className="text-white/70" />
-              </button>
-            </div>
+          {/* Right: Starwall Widget */}
+          <div className="lg:w-2/3 w-full bg-white rounded-3xl overflow-hidden shadow-2xl p-4 md:p-8">
+            <div id="reviews-widget-277"></div>
+            <Script src="https://starwall.io/embed/s3ztRU3v3Ubmilo1fzDA1Jbsa8rmG7zG/widget.js" strategy="lazyOnload" />
           </div>
 
         </div>
