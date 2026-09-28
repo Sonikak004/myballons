@@ -36,6 +36,38 @@ const events = [
     image: "/gallery/photo-26.webp",
     bgColor: "bg-white",
   },
+  {
+    id: 5,
+    title: "Luxury Baby Shower",
+    category: "Baby Showers",
+    desc: "A soft, pastel-themed setup to welcome the newest arrival, featuring premium teddy bear props and custom balloon arches.",
+    image: "/gallery/photo-28.webp",
+    bgColor: "bg-[#fcfbf8]",
+  },
+  {
+    id: 6,
+    title: "Grand Retirement Gala",
+    category: "Milestones",
+    desc: "An elegant evening celebrating a lifetime of achievements with sophisticated gold and black decor.",
+    image: "/gallery/photo-29.webp",
+    bgColor: "bg-white",
+  },
+  {
+    id: 7,
+    title: "Whimsical Theme Party",
+    category: "Kids Parties",
+    desc: "A magical underwater themed party complete with custom props, bringing imagination to life for the little ones.",
+    image: "/gallery/photo-30.jpg",
+    bgColor: "bg-[#fcfbf8]",
+  },
+  {
+    id: 8,
+    title: "Exclusive Product Launch",
+    category: "Corporate Events",
+    desc: "A modern, sleek environment designed to highlight your brand's newest innovations.",
+    image: "/gallery/photo-31.webp",
+    bgColor: "bg-white",
+  },
 ];
 
 export default function StackedEvents() {
