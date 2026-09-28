@@ -82,7 +82,9 @@ export default function StackedEvents() {
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover"
-                   quality={100} />
+                    quality={100}
+                    unoptimized
+                  />
                 </div>
               </div>
               

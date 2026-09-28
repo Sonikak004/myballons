@@ -10,7 +10,7 @@ export default function WhyChooseUs() {
   const polaroids = [
     {
       src: "/gallery/photo-19.jpg",
-      caption: "Stuthi's 1st Birthday",
+      caption: "Grand Celebration",
       rotate: "-rotate-6",
       zIndex: "z-10",
       position: "top-[5%] left-[2%] md:top-[5%] md:left-[10%]",
@@ -18,7 +18,7 @@ export default function WhyChooseUs() {
     },
     {
       src: "/gallery/photo-20.webp",
-      caption: "Ushith Reddy, Turns 1",
+      caption: "Tharak Turns 1",
       rotate: "rotate-3",
       zIndex: "z-20",
       position: "top-[25%] right-[2%] md:top-[15%] md:right-[5%]",
