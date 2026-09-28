@@ -79,7 +79,7 @@ export default function CarouselSection() {
                       fill
                       sizes="(max-width: 768px) 85vw, (max-width: 1200px) 50vw, 30vw"
                       className="object-cover"
-                    />
+                     quality={100} />
                   </div>
                   <div className="absolute inset-0 bg-primary/10 transition-opacity group-hover:opacity-0 z-10 pointer-events-none" />
                 </div>

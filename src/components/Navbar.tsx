@@ -53,7 +53,7 @@ export default function Navbar() {
               fill
               className="object-contain object-left"
               priority
-            />
+             quality={100} />
           </div>
         </Link>
 

@@ -4,12 +4,12 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 const images = [
-  "/gallery/photo-19.jpg",
-  "/gallery/photo-20.webp",
-  "/gallery/photo-21.webp",
+  "/gallery/photo-18.webp",
   "/gallery/photo-23.webp",
-  "/gallery/photo-24.webp",
   "/gallery/photo-25.webp",
+  "/gallery/photo-30.jpg",
+  "/gallery/photo-31.webp",
+  "/gallery/photo-32.webp",
 ];
 
 // Tailwind classes for the perfect flush bento box, completely responsive!
@@ -51,7 +51,7 @@ export default function PhotoGallery() {
                   fill 
                   sizes="(max-width: 768px) 100vw, 50vw" 
                   className="object-cover" 
-                />
+                 quality={100} />
               </div>
               
               {/* Hover Overlay */}

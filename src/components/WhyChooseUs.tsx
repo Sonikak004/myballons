@@ -111,7 +111,7 @@ export default function WhyChooseUs() {
                         fill 
                         className="object-cover"
                         sizes="(max-width: 768px) 250px, 300px"
-                      />
+                       quality={100} />
                     </div>
                   </div>
                   
