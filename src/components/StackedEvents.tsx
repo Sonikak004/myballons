@@ -44,19 +44,19 @@ export default function StackedEvents() {
       
       <div className="py-12 md:py-24 text-center px-4">
         <motion.h2 
-          initial={{ y: 20, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+          
+          
+          
+          
           className="text-4xl md:text-6xl font-serif font-bold text-primary mb-4"
         >
           Signature Experiences
         </motion.h2>
         <motion.p
-          initial={{ y: 20, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          viewport={{ once: true }}
+          
+          
+          
+          
           className="text-foreground/70 font-light max-w-2xl mx-auto text-lg"
         >
           Scroll to explore our meticulously crafted events.

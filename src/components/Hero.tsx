@@ -28,9 +28,9 @@ export default function Hero() {
       {/* Content */}
       <div className="relative z-20 text-center px-4 max-w-4xl mx-auto flex flex-col items-center pointer-events-none">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          
           className="pointer-events-auto"
         >
           <span className="inline-block py-1.5 px-4 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs md:text-sm font-medium mb-6 uppercase tracking-widest shadow-xl">
@@ -64,9 +64,9 @@ export default function Hero() {
       {/* Scroll Down Indicator */}
       <motion.div
         className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center cursor-pointer"
-        initial={{ opacity: 0 }}
+        
         animate={{ opacity: 1 }}
-        transition={{ delay: 1, duration: 1 }}
+        
         onClick={() => {
           window.scrollTo({
             top: window.innerHeight,
@@ -77,7 +77,7 @@ export default function Hero() {
         <span className="text-white/70 text-xs tracking-widest uppercase mb-2 drop-shadow-md">Scroll to explore</span>
         <motion.div
           animate={{ y: [0, 10, 0] }}
-          transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+          
         >
           <ChevronDown className="text-white" size={24} />
         </motion.div>

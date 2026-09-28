@@ -15,11 +15,7 @@ export default function MarqueeSection() {
         <motion.div
           className="flex items-center gap-8 md:gap-16 pr-8 md:pr-16"
           animate={{ x: ["0%", "-50%"] }}
-          transition={{
-            repeat: Infinity,
-            ease: "linear",
-            duration: 20, // Adjust speed here
-          }}
+          
           // By doubling the content inside this single scrolling div and animating to -50%, it loops perfectly.
         >
           {/* We render the same items multiple times to ensure the loop fills the screen */}

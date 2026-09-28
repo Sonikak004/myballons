@@ -13,10 +13,10 @@ export default function Testimonials() {
           <div className="lg:w-1/3 relative">
             <div className="lg:sticky lg:top-[30vh] flex flex-col gap-4 lg:gap-6">
               <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
+              
+              
+              
+              
               className="text-center lg:text-left flex flex-col items-center lg:items-start"
             >
               <h2 className="text-4xl sm:text-5xl md:text-6xl font-serif font-bold leading-tight mb-3 lg:mb-6">

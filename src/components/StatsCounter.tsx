@@ -47,10 +47,10 @@ export default function StatsCounter() {
           {stats.map((stat, idx) => (
             <motion.div
               key={stat.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: idx * 0.2 }}
-              viewport={{ once: true, amount: 0.8 }}
+              
+              
+              
+              
               className="flex flex-col items-center text-center group"
             >
               {/* Modest Elegant Number */}

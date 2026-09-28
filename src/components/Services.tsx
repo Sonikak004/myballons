@@ -77,31 +77,27 @@ export default function Services() {
   }, [emblaApiTop, emblaApiBottom]);
 
   return (
-    <section id="services" className="py-24 bg-background w-full overflow-hidden">
+    <section id="services" className="py-12 md:py-24 bg-background w-full overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
         
         <div className="text-center mb-16">
           <motion.h2 
-            initial={{ y: 20, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+            
+            
+            
+            
             className="text-4xl md:text-5xl font-serif font-bold text-primary mb-4"
           >
             The Journey & Services
           </motion.h2>
-          <motion.div 
-            initial={{ width: 0, opacity: 0 }}
-            whileInView={{ width: "80px", opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="h-1 bg-accent rounded-full mx-auto mb-6"
+          <div 
+            className="w-20 h-1 bg-accent rounded-full mx-auto mb-6"
           />
           <motion.p
-            initial={{ y: 20, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            viewport={{ once: true }}
+            
+            
+            
+            
             className="text-foreground/70 font-light max-w-2xl mx-auto"
           >
             From conceptualization to execution, we offer a comprehensive range of event management services tailored to your needs.

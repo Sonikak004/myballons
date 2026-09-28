@@ -24,24 +24,24 @@ const bentoClasses = [
 
 export default function PhotoGallery() {
   return (
-    <section id="gallery" className="py-24 bg-white w-full">
+    <section id="gallery" className="py-12 md:py-24 bg-white w-full">
       <div className="container mx-auto px-4 md:px-6">
         
         <div className="text-center mb-16">
           <motion.h2 
-            initial={{ y: 20, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+            
+            
+            
+            
             className="text-4xl md:text-5xl font-serif font-bold text-primary mb-4"
           >
             A Glimpse of Magic
           </motion.h2>
           <motion.p
-            initial={{ y: 20, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
+            
+            
+            
+            
             className="text-foreground/70 font-light max-w-2xl mx-auto"
           >
             Browse through some of our most memorable events and breathtaking setups.
@@ -53,10 +53,10 @@ export default function PhotoGallery() {
           {images.map((src, idx) => (
             <motion.div
               key={idx}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: idx * 0.1 }}
-              viewport={{ once: true }}
+              
+              
+              
+              
               className={`relative w-full h-full ${bentoClasses[idx]} rounded-3xl overflow-hidden shadow-lg group cursor-pointer`}
             >
               {/* 25% aggressive crop to hide watermarks */}

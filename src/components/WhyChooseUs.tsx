@@ -62,19 +62,19 @@ export default function WhyChooseUs() {
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-12 lg:mb-16">
           <motion.h2 
-            initial={{ y: 20, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+            
+            
+            
+            
             className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-foreground mb-6"
           >
             Why Hosts <span className="text-secondary">Choose Us</span>
           </motion.h2>
           <motion.p 
-            initial={{ y: 20, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
+            
+            
+            
+            
             className="text-lg text-foreground/70 font-light"
           >
             With years of experience, we bring a touch of magic to every event. Our commitment to excellence ensures your special moments are nothing short of spectacular.
@@ -91,10 +91,10 @@ export default function WhyChooseUs() {
               <motion.div
                 key={idx}
                 onClick={() => setActiveIdx(activeIdx === idx ? null : idx)}
-                initial={{ opacity: 0, scale: 0.8, rotate: 0 }}
-                whileInView={{ opacity: 1, scale: 1, rotate: polaroid.rotate === "rotate-3" ? 3 : (polaroid.rotate === "-rotate-6" ? -6 : -2) }}
-                transition={{ duration: 0.6, delay: idx * 0.2 }}
-                viewport={{ once: true }}
+                
+                
+                
+                
                 className={`absolute ${polaroid.position} ${polaroid.width} ${activeIdx === idx ? 'z-50 scale-105' : polaroid.zIndex} hover:z-50 transition-all duration-300 hover:scale-105 group cursor-pointer`}
               >
                 {/* Polaroid Frame */}
@@ -131,10 +131,10 @@ export default function WhyChooseUs() {
             {features.map((feature, idx) => (
               <motion.div 
                 key={idx}
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 + (idx * 0.1) }}
-                viewport={{ once: true }}
+                
+                
+                
+                
                 className="relative pl-8 md:pl-12 group"
               >
                 {/* Pin / Connector Line */}

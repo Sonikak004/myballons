@@ -41,10 +41,10 @@ export default function CarouselSection() {
         
         <div className="text-center mb-6 md:mb-12 flex flex-col items-center">
           <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+            
+            
+            
+            
             className="max-w-2xl mx-auto"
           >
             <h2 className="text-4xl md:text-5xl font-serif font-bold text-primary mb-3 md:mb-4">

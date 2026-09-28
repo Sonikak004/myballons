@@ -27,15 +27,15 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="py-24 bg-white w-full">
+    <section className="py-12 md:py-24 bg-white w-full">
       <div className="container mx-auto px-4 md:px-6 max-w-4xl">
         
         <div className="text-center mb-16">
           <motion.h2 
-            initial={{ y: 20, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+            
+            
+            
+            
             className="text-4xl md:text-5xl font-serif font-bold text-primary mb-4"
           >
             Frequently Asked Questions
@@ -48,10 +48,10 @@ export default function FAQ() {
             return (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
+                
+                
+                
+                
                 className="border border-black/10 rounded-2xl overflow-hidden bg-background/50"
               >
                 <button
@@ -66,10 +66,10 @@ export default function FAQ() {
                 <AnimatePresence>
                   {isOpen && (
                     <motion.div
-                      initial={{ height: 0, opacity: 0 }}
+                      
                       animate={{ height: "auto", opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                      
                     >
                       <div className="px-6 pb-6 text-foreground/70 font-light leading-relaxed">
                         {faq.answer}
