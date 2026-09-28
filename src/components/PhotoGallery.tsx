@@ -10,9 +10,6 @@ const images = [
   "/gallery/photo-23.webp",
   "/gallery/photo-24.webp",
   "/gallery/photo-25.webp",
-  "/gallery/photo-26.webp",
-  "/gallery/photo-27.webp",
-  "/gallery/photo-32.webp",
 ];
 
 // Tailwind classes for the perfect flush bento box, completely responsive!
