@@ -95,7 +95,7 @@ export default function WhyChooseUs() {
                 
                 
                 
-                className={`absolute ${polaroid.position} ${polaroid.width} ${activeIdx === idx ? 'z-50 scale-105' : polaroid.zIndex} hover:z-50 transition-all duration-300 hover:scale-105 group cursor-pointer`}
+                className={`absolute ${polaroid.position} ${polaroid.width} ${polaroid.rotate} ${activeIdx === idx ? 'z-50 scale-105' : polaroid.zIndex} hover:z-50 transition-all duration-300 hover:scale-105 group cursor-pointer`}
               >
                 {/* Polaroid Frame */}
                 <div className="bg-white p-2 sm:p-3 pb-10 sm:pb-12 shadow-[0_15px_35px_-10px_rgba(0,0,0,0.15)] rounded-sm group-hover:shadow-[0_20px_40px_-10px_rgba(0,0,0,0.25)] transition-shadow">
