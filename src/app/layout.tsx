@@ -47,6 +47,32 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       className={`${inter.variable} ${playfair.variable} h-full antialiased`}
       suppressHydrationWarning
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "EventPlanningBusiness",
+              "name": "My Balloons My Prop's",
+              "image": "https://myballoonsmyprops.com/logo.png",
+              "url": "https://myballoonsmyprops.com",
+              "telephone": "+919035106677",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Bangalore",
+                "addressRegion": "Karnataka",
+                "addressCountry": "IN"
+              },
+              "sameAs": [
+                "https://www.instagram.com/myballoonsmyprops/?hl=en",
+                "https://www.facebook.com/MyballoonMyprops/",
+                "https://www.youtube.com/@myballoonsmyprops"
+              ]
+            })
+          }}
+        />
+      </head>
       <body className="min-h-screen font-sans bg-background text-foreground" suppressHydrationWarning>
         <SmoothScroller>
           {children}
