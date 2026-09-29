@@ -13,6 +13,10 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://myballoonsmyprops.com"),
+  alternates: {
+    canonical: '/',
+  },
   title: "My Balloons My Prop's | Best Event Planners & Decorators in Bangalore",
   description: "Top-rated event management company in Bengaluru. Specializing in luxury weddings, corporate events, birthday balloon decorations, and custom themes.",
   keywords: ["Event Planners Bangalore", "Balloon Decoration Bangalore", "Wedding Decorators Begur", "Corporate Event Management", "Birthday Planners Bengaluru", "My Balloons My Props"],
